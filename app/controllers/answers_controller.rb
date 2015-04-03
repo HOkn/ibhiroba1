@@ -8,7 +8,7 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to user_question_path(@user, @question)
     else
-      raise
+      redirect_to user_question_path(@user, @question)
     end
   end
 
