@@ -1,7 +1,6 @@
 = render 'header'
 
 .row
-
   .col-md-9
     / CONTENT
     .content_wrap
@@ -21,15 +20,21 @@
         %ul
           - @questions.each do |question|
             %li.indexcontentbox
-              = link_to user_question_path(current_user, question) do
+              - if logged_in?
+                = link_to user_question_path(current_user, question) do
+                  .float.indexcontent.indexcontent1= question.title[0,14]
+                  .float.indexcontent.indexcontent2= question.categories.first.name
+                  .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                  .float.indexcontent.indexcontent4= question.answers.count
+                  .float.indexcontent.indexcontent5= question.favorites.count
+                  .clear
+              - else
                 .float.indexcontent.indexcontent1= question.title[0,14]
                 .float.indexcontent.indexcontent2= question.categories.first.name
                 .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
                 .float.indexcontent.indexcontent4= question.answers.count
                 .float.indexcontent.indexcontent5= question.favorites.count
                 .clear
-
   .sidebar.col-md-3
     = render 'sidebar'
-
 = render 'footer'
