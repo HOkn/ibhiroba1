@@ -1,0 +1,104 @@
+= render 'header'
+
+.row
+  .col-md-1
+  .col-md-8
+
+    %h1 質問を編集
+    =form_for :question, url: user_question_path(@user, @question), method: :put do |f|
+      - if @question.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@question.errors.count, "error")
+            %br このままでは投稿ができません。
+          %ul
+            - @question.errors.full_messages.each do |msg|
+              %li= msg
+
+      %p
+        = f.label :質問のタイトル
+        %br
+          = f.text_field :title, :class => "input form-control", :placeholder => "質問のタイトル", :type => "text"
+      %p
+        = f.label :質問の内容
+        = f.text_area :content, :class => "textarea form-control", :placeholder => "質問の内容", :rows => "12"
+
+
+      %p
+        .category1
+          .space10px
+          カテゴリー（複数選択可能）
+          - test = []
+          - @category.each_with_index do |c, i|
+            - test[i] = c.id
+
+          - @categories.each do |cat|
+            - flag = test.include?(cat.id)
+            = check_box :category, :id, { checked: flag, multiple: true }, cat.id, nil
+            = cat.name
+
+
+          / = check_box :category, :id, { :multiple => true }, true, false
+          / - @categories.each do |hoge|
+          / = check_box_tag :category, :id, { :multiple => true }, true, false
+          / = check_box_tag :category, :id, { multiple: true }, hoge.id, false
+          / - @categories.each do |c|
+          /   - array = Array.new(@category.count, @category.id)
+          /   - array.each do |checkbox|
+          /     - if checkbox.id == c.id
+          /       = check_box :category, :id, { multiple: true }, c.id, false, checked = "checked"
+          /     - else
+          /       = check_box :category, :id, { multiple: true }, c.id, false
+          /   = c.name
+
+          / - if  @category.id.include?(c.id)
+          /   = check_box :category, :id, { multiple: true }, c.id, false, checked = "checked"
+          / - else
+          /   = check_box :category, :id, { multiple: true }, c.id, false
+          / = c.name
+
+          / - @categories.each do |c|
+          /   - array = Array.new(@category.count, @category.id)
+          /   - array.each do |checkbox|
+          /     - if checkbox.id.include?(c.id)
+          /       = check_box :category, :id, { multiple: true }, c.id, false, checked = "checked"
+          /     - else
+          /       = check_box :category, :id, { multiple: true }, c.id, false
+          /   = c.name
+
+
+        .space10px
+        .category2
+          .space10px
+          この質問に答えてほしい人（複数選択可能）
+          %br
+            %label.checkbox-inline
+              %input#inlineCheckbox3{:type => "checkbox", :value => "option3"}
+                IB生
+            %label.checkbox-inline
+              %input#inlineCheckbox3{:type => "checkbox", :value => "option3"}
+                IB生の親
+            %label.checkbox-inline
+              %input#inlineCheckbox3{:type => "checkbox", :value => "option3"}
+                そのほかの親
+            %label.checkbox-inline
+              %input#inlineCheckbox3{:type => "checkbox", :value => "option3"}
+                教育関係者
+            %br
+              .space10px
+        %input.form-control{:placeholder => "キーワード", :type => "text"}
+          %input.form-control{:placeholder => "キーワード", :type => "text"}
+            %input.form-control{:placeholder => "キーワード", :type => "text"}
+              .space10px
+              .space10px
+              .file
+                添付ファイルを選択
+                %input{:type => "file"}/
+      %p
+        .box_button
+          = f.submit '編集を保存', :class => "a btn btn-default"
+
+  .sidebar.col-md-3
+    = render 'sidebar'
+
+= render 'footer'

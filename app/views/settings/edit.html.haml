@@ -1,0 +1,86 @@
+= render 'questions/header'
+.row
+  .col-md-9
+    .content_wrap
+      .content
+        .accountsetting
+          =link_to "ログアウト", sessions_path, :class => "a btn btn-default float_right", method: :delete
+          .clear
+
+          %h3 設定変更
+          - @user.errors.each do |attr, msg|
+            .alert.alert-danger= msg
+          .row
+            .col-md-4.accountinfoname
+              %ul
+                %li メールアドレス：
+                %li 表示名：
+                .status 立場：
+                %li お子様の年齢：
+                %li お子様の年齢：
+                %li 在住国：
+                %li 都道府県/地域*：
+                %li 学校名：
+                %li ほかに知っている地域：
+
+                %li 知りたい情報：
+                %li 答えられる分野：
+                %li 自己紹介：
+                %li Q&A記録の公開：
+                %li メールマガジン：
+                .space10px
+                %li パスワード：
+                %li パスワード(確認用)：
+            .col-md-8.accountinfo
+              %ul
+                - @user.errors.each do |attr, message|
+                  .alert.alert-danger= message
+                = form_for @user, url: settings_path, method: :put do |f|
+                  %li= f.text_field :email, :placeholder => "example@example.com"
+                  %li= f.text_field :screen_name, :placeholder => "4~24文字"
+                  %li.radio.float=f.radio_button :status, string: "par"
+                  　　保護者
+                  .clear
+                  %li.radio.float=f.radio_button :status, string: "IBpar"
+                  　　IB生の保護者
+                  .clear
+                  %li.radio.float=f.radio_button :status, string: "teach"
+                  　　教員
+                  .clear
+                  %li.radio.float=f.radio_button :status, string: "IBteach"
+                  　　IB教員
+                  .clear
+                  %li.radio.float=f.radio_button :status, string: "IBstud"
+                  　　IB生
+                  .clear
+                  %li.child_age
+                  = f.text_field :child_age1, :class => "child_age"
+                  歳(非公開)
+                  %li.child_age
+                  = f.text_field :child_age2, :class => "child_age"
+                  歳(非公開)
+                  %li= f.text_field :residence_country, :placeholder => "(例)日本"
+                  %li= f.text_field :residencenow, :placeholder => "(例)東京都"
+                  %li= f.text_field :school, :placeholder => "学校名(非公開)"
+                  %li= f.text_field :origin, :placeholder => "(例)アメリカ"
+                  %li= f.text_field :wannaknow
+                  %li= f.text_field :know
+                  %li= f.text_field :bio
+                  %li
+                  %li.checkbox.float= f.check_box :privacy, {}, true, false
+                  　　サイト内公開
+                  .clear
+                  %li.checkbox.float= f.check_box :mailmagazine, {}, true, false
+                  　　受け取る
+                  .space10px
+                  .space10px
+                  %li= f.password_field :password
+                  %li= f.password_field :password_confirmation
+                  %li= f.submit '変更を保存', :class => "btn btn-default submitbutton"
+          .clear
+
+
+  .col-md-3.sidebar
+    = render 'questions/sidebar'
+
+= render 'questions/footer'

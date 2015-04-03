@@ -1,0 +1,113 @@
+/ SIDEBAR
+/ PROFILE
+.profile
+  %div
+    .name.float
+      %i.fa.fa-user
+      - if current_user.present?
+        = current_user.screen_name
+      - else
+        Unknown User
+    .clear
+    .row
+      - if logged_in?
+        .col-md-4
+          %a.btn.btn-primary{:href => "", :type => "button"}
+            %i.fa.fa-thumbs-o-up
+            %span.badge 4
+        .col-md-4
+          = link_to "Q&A記録", user_path(current_user.id), :class => "a btn btn-default"
+        .col-md-4
+          = link_to "設定", edit_settings_path(current_user), :class => "a btn btn-default"
+      - else
+        .col-md-4
+          %a.btn.btn-primary{:href => "", :type => "button"}
+            %i.fa.fa-thumbs-o-up
+            %span.badge 4
+        .col-md-4
+          = link_to "Q&A記録", new_registrations_path, :class => "a btn btn-default"
+        .col-md-4
+          = link_to "ログイン", new_registrations_path, :class => "a btn btn-default"
+/ PROFILE end
+/ INDEX+RANKING+NEW+LINKS
+.ranking
+  .space10px
+  .space10px
+  %a{:href => "", :target => "blank"} 国際バカロレア（IB）とは
+  %br
+    .space10px
+    %a{:href => "", :target => "blank"} IB知恵袋とは
+    %br
+      .space10px
+      .bartitle
+        =link_to "カテゴリ別質問", questions_category_path
+
+      %ul
+        %li
+          =link_to "・家庭学習", questions_category_path
+        %li
+          =link_to "・学校/塾の評判", questions_category_path
+        %li
+          =link_to "・進路相談", questions_category_path
+        .space10px
+        %li
+          =link_to "・小学校/IB PYP", questions_category_path
+        %li
+          =link_to "・中学校/IB MYP", questions_category_path
+        %li
+          =link_to "・高校/IB DP", questions_category_path
+        %li
+          =link_to "・課外活動/CAS", questions_category_path
+        %li
+          =link_to "・TOK/EE", questions_category_path
+        .space10px
+        %li
+          =link_to "・試験勉強", questions_category_path
+      .space10px
+      .bartitle
+        %a{:href => ""} ランキング
+      %ol
+        %li IBの科目選択はどうすれば…
+        %li IB校選びで気をつけたこと…
+        %li こどもの習い事と両立につ…
+        %li 英語の学習方法が、家庭で…
+        %li 英語の学習方法が、家庭で…
+        %li I
+        %li I
+        %li I
+        %li I
+        %li I
+      .space10px
+      .bartitle
+        %a{:href => ""} IB生注目のQ&A
+      %ol
+        %li Japのコメンタリー、どう…
+        %li IB校選びで気をつけたこと…
+        %li 英語の先生から、「あまり…
+        %li 英語の勉強方法を学校でど…
+      .space10px
+      .bartitle
+        %a{:href => ""} 新着Q&A
+      ・IBの試験準備はどうすれば…
+      %br
+        ・IB校選びで失敗しましたが…
+        %br
+          ・こどもの習い事と両立につ…
+          %br
+            ・英語と日本語では、どのよ…
+            %br
+              .space10px
+              .bartitle
+                リンク
+              %a{:href => "https://www.facebook.com/groups/IB.Community.Japan/?ref=ts&fref=ts", :target => "blank"}
+                ・Facebook国際バカロレアコミュニティ
+              %br
+                %a{:href => "http://ibjpn.com/", :target => "blank"}
+                  ・IBJPN.com
+                %br
+                  %a{:href => "http://www.ibo.org/", :target => "blank"}
+                    ・International Baccalaureate Program
+                  %br
+                    .space10px
+  / SIDEBAR end
+/ div row end

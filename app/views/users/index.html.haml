@@ -1,0 +1,35 @@
+
+= render 'questions/header'
+
+.row
+  .col-md-1
+  .col-md-8
+    / CONTENT
+    .content_wrap
+      .content
+        .space10px
+        .space10px
+        %h1 Listing users
+
+        %table
+          %thead
+            %tr
+              %th screen_name
+              %th email
+              %th users/:id
+
+          %tbody
+            - @users.each do |user|
+              %tr
+                %td= link_to user.screen_name, user
+                %td= link_to user.email
+                %td= link_to 'Show', user
+
+
+  .sidebar.col-md-3
+    = render 'questions/sidebar'
+
+= render 'questions/footer'
+
+
+

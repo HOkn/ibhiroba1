@@ -1,0 +1,496 @@
+
+.questions
+  .middle
+    vertical-align: middle
+
+  .col-md-9
+    position: relative
+
+  .content_wrap
+    padding: 0 30px 0 20px
+    margin: 0 0 0 0
+  .content
+    width: 85%
+    vertical-align: center
+
+  .content_wrap
+    .answer, .question
+      border-color: #bbc7c8
+      border-radius: 2px
+      margin: 0 auto
+
+  .content
+    padding-left: 30px
+
+
+  // buttonを中央に配置
+  .content
+    .box_button
+      width: 100%
+      height: 50px
+      text-align: center
+
+  h2
+    color: #8c550b
+    font-size: 20px
+    margin: 0 0 10px 20px
+
+  .content_wrap
+    margin: 50px 10px 0px 0px
+    background-color: rgb(231, 211, 161)
+    border-radius: 5px
+  .content
+    padding-top: 10px
+    padding-bottom: 20px
+    margin-right: 0px
+
+    #question_title
+      color: rgb(140, 85, 11)
+      font-size: 25px
+      margin-top: 10px
+      padding-left: 20px
+    #question_info
+      font-size: 13px
+      margin-top: 15px
+      margin-bottom: 15px
+      padding-left: 20px
+    #question_content
+      font-size: 17px
+      padding-bottom: 20px
+      margin-right: 20px
+      padding-left: 20px
+    #answer_info
+      color: #8c550b
+      font-size: 16px
+      margin-bottom: 15px
+      margin-top: 20px
+      padding-left: 20px
+    #answer_content
+      border-radius: 3px
+      border-style: none
+      padding: 0 0 0 0
+      font-size: 17px
+
+  // new, edit画面:質問についての選択スペース
+  .category1
+    background-color: rgb(206, 255, 107)
+    padding-left: 10%
+    color: rgb(23, 64, 139)
+    height: 120px
+
+  .category2
+    background-color: rgb(206, 255, 107)
+    padding-left: 10%
+    color: rgb(23, 64, 139)
+    height: 80px
+
+
+  // ほか
+
+  .content
+    .question, #answer_info, #answer_content
+      width: 100%
+      margin-left: 0px
+      margin-bottom: 90px
+      padding-top: 5px
+      background-color: rgb(237, 231, 230)
+      opacity: 1
+    .answer_box
+      margin-top: 100px
+    #answer_info
+      margin-top: 50px
+      margin-bottom: 0px
+      padding: 15px 25px 20px 25px
+    #answer_content
+      margin-top: 0px
+      padding: 5px 25px 30px 25px
+    .answerbox
+      #answer_content
+        margin-bottom: 0px
+
+  // 文字の位置とサイズ
+
+  // 文章のmax-widthを定義する
+  .content_wrap .answer_info, .answer_content, .content_wrap .question_info, .question_content
+    max-width: 690px
+
+  // 回答するボタン
+
+  .content_wrap
+    .btn-default
+      font-size: 20px
+      color: white
+      background-color: rgb(11, 169, 25)
+      border-color: rgb(11, 169, 25)
+      margin: 10px
+      width: 50%
+      height: 50px
+    .answerlast .btn-default
+      font-size: 20px
+      color: white
+      background-color: rgb(11, 169, 25)
+      border-color: rgb(11, 169, 25)
+      margin: 10px 10px 10px 100px
+      width: 50%
+      height: 50px
+    .btn-default:hover
+      color: white
+      opacity: 0.7
+
+  // colors
+  #questionbackg
+    width: 100%
+
+  // file upload添付ファイル
+  .file
+    display: inline-block
+    overflow: hidden
+    position: relative
+    background-color: transparent
+    padding: .5em
+    border: 1px solid rgb(204, 204, 204)
+    border-radius: 7px
+    background-color: #eee
+    input[type="file"]
+      position: absolute
+      right: 0
+      top: 0
+      font-size: 20px
+      cursor: pointer
+
+  &.show
+    #FacebookIcon
+      width: 25px
+      height: 25px
+    .FacebookIcon
+      margin: 0 10px 0px 20px
+    .answerlink
+      background-color: #78FF5B
+      border-style: none
+      margin-left: 25%
+    .button_to
+      input
+        color:white
+        font-size: 20px
+        background-color: rgb(11, 169, 25)
+        border-color: rgb(11, 169, 25)
+        margin: 10px
+        width: 50%
+        height: 50px
+        border-radius: 3px
+      input:hover
+        opacity: 0.7
+    .input-group
+      .btn-default
+        margin: 0
+        width: 100%
+        height: 100%
+        padding: 1px 10px 0px 10px
+
+
+
+  &.edit
+    h1
+      margin: 40px 0 30px 0
+      font-size: 20px
+    .box_button
+      .btn-default
+        font-size: 20px
+        color: white
+        background-color: rgb(11, 169, 25)
+        border-color: rgb(11, 169, 25)
+        margin-left: 30%
+        width: 30%
+        height: 50px
+      .btn-default:hover
+        color: white
+        opacity: 0.7
+    p
+      margin: 0
+
+  &.new
+    #question_title
+      font-size: 17px
+
+  &.index
+    color: #512201
+    .indextop1
+      width: 40%
+      min-width: 90px
+    .indextop2
+      width: 20%
+    .indextop3
+      width: 120px
+    .indextop4
+      width: 50px
+
+    .indexcontentbox
+      font-size: 16px
+      height: 40px
+      a
+        color: #FF0057
+      a:hover
+        color: rgb(197, 89, 13)
+    .indexcontentbox:hover
+      background-color: #EDEAB3
+    .indexcontent1
+      margin-top: 10px
+      width: 40%
+      min-width: 90px
+    .indexcontent2
+      margin-top: 10px
+      width: 20%
+    .indexcontent3
+      margin-top: 10px
+      width: 120px
+    .indexcontent4
+      margin: 10px 0 0 17px
+      width: 50px
+
+  &.index_category
+
+    .indextop1
+      width: 40%
+      min-width: 90px
+    .indextop2
+      width: 20%
+    .indextop3
+      width: 120px
+    .indextop4
+      width: 50px
+
+    .indexcontentbox
+      font-size: 16px
+      height: 40px
+    .indexcontentbox:hover
+      background-color: #EDEAB3
+    .indexcontent1
+      margin-top: 10px
+      width: 40%
+      min-width: 90px
+    .indexcontent2
+      margin-top: 10px
+      width: 20%
+    .indexcontent3
+      margin-top: 10px
+      width: 120px
+    .indexcontent4
+      margin: 10px 0 0 17px
+      width: 50px
+
+
+
+.answers
+  &.edit
+    .box_button
+      width: 100%
+      height: 50px
+      text-align: center
+    .content_wrap
+      .btn-default
+        font-size: 20px
+        color: white
+        background-color: rgb(11, 169, 25)
+        border-color: rgb(11, 169, 25)
+        margin: 10px
+        width: 50%
+        height: 50px
+      .answerlast .btn-default
+        font-size: 20px
+        color: white
+        background-color: rgb(11, 169, 25)
+        border-color: rgb(11, 169, 25)
+        margin: 10px 10px 10px 100px
+        width: 50%
+        height: 50px
+      .btn-default:hover
+        color: white
+        opacity: 0.7
+      #answer_content
+        border-radius: 3px
+        border-style: none
+        padding: 0 0 0 0
+      .answerbox
+        textarea
+          width: 80%
+          height: 350px
+          margin-left: 10%
+          margin-top: 20px
+
+.registrations
+  color: rgb(118, 9, 0)
+  .accountsetting
+    .btn-default
+      font-size: 20px
+      color: white
+      background-color: rgb(11, 169, 25)
+      border-color: rgb(11, 169, 25)
+      margin: 10px
+      width: 150px
+      height: 50px
+    .btn-default:hover
+      color: white
+      opacity: 0.7
+    .submitbutton
+      margin-top: 60px
+    .accountinfoname
+      margin: 0
+    h3
+      margin-left: 13px
+      margin-top: 10px
+      margin-bottom: 15px
+    ul
+      text-align: right
+      li
+        margin-bottom: 7px
+        font-size: 17px
+    .status
+      font-size: 17px
+      margin-bottom: 90px
+  .accountinfo
+    ul
+      text-align: left
+      li
+        margin-bottom: 4px
+        font-size: 16px
+      input
+        width: 400px
+    .opinionbox
+      height: 200px
+    .child_age
+      width: 30px
+    .radio
+      input
+        width: 200px
+        margin: 0 0 0 4px
+    .checkbox
+      input
+        width: 17px
+        margin: 0 0 0 4px
+
+.sessions
+  h3
+    margin-left: 20px
+  color: rgb(118, 9, 0)
+  .alert
+    padding: 0px
+    margin: 0px
+    border: 0px
+  .accountsetting
+    .btn-default
+      font-size: 20px
+      color: white
+      background-color: rgb(11, 169, 25)
+      border-color: rgb(11, 169, 25)
+      margin: 10px
+      width: 150px
+      height: 50px
+    .btn-default:hover
+      color: white
+      opacity: 0.7
+    .submitbutton
+      margin-top: 60px
+    .accountinfoname
+      ul
+      text-align: right
+      li
+        margin-bottom: 7px
+        font-size: 17px
+    .accountinfo
+      ul
+        text-align: left
+      li
+        margin-bottom: 4px
+        font-size: 16px
+
+.settings
+  h3
+    margin-left: 20px
+    color: rgb(118, 9, 0)
+  .alert
+    padding: 0px
+    margin: 0px
+    border: 0px
+  .accountsetting
+    .btn-default
+      font-size: 20px
+      color: white
+      background-color: rgb(11, 169, 25)
+      border-color: rgb(11, 169, 25)
+      margin: 10px
+      width: 150px
+      height: 50px
+  .btn-default:hover
+    color: white
+    opacity: 0.7
+  .submitbutton
+    margin-top: 60px
+  .accountinfoname
+    margin: 0
+    h3
+      margin-left: 13px
+      margin-top: 10px
+      margin-bottom: 15px
+    ul
+      text-align: right
+      li
+        margin-bottom: 7px
+        font-size: 17px
+  .status
+    font-size: 17px
+    margin-bottom: 90px
+  .accountinfo
+    ul
+      text-align: left
+      li
+        margin-bottom: 4px
+        font-size: 17px
+      input
+        width: 400px
+    .opinionbox
+      height: 200px
+    .child_age
+      width: 30px
+    .radio
+      input
+        width: 200px
+        margin: 0 0 0 4px
+    .checkbox
+      input
+        width: 17px
+        margin: 0 0 0 4px
+.users
+  &.show
+    color: #512201
+    .indextop1
+      width: 30%
+      min-width: 90px
+    .indextop2
+      width: 20%
+    .indextop3
+      width: 130px
+    .indextop4
+      width: 50px
+
+    .indexcontentbox
+      a
+        color: #FF0057
+      a:hover
+        color: rgb(197, 89, 13)
+      height: 40px
+      font-size: 17px
+    .indexcontentbox:hover
+      background-color: #EDEAB3
+    .indexcontent1
+      margin-top: 10px
+      width: 30%
+      min-width: 90px
+    .indexcontent2
+      margin-top: 10px
+      width: 20%
+    .indexcontent3
+      margin-top: 10px
+      width: 140px
+    .indexcontent4
+      margin-top: 10px
+      width: 50px

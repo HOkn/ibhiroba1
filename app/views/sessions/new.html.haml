@@ -1,0 +1,34 @@
+= render 'questions/header'
+.row
+  .col-md-9
+    .content_wrap
+      .content
+        .accountsetting
+          =link_to "新規登録する", new_registrations_path, :class => "a btn btn-default float_right"
+          .clear
+          %h3 ログイン
+          - if action_name == "create"
+            .alert.alert-danger
+            メールアドレスまたはパスワードが正しくありません。
+          .row
+            .col-md-4.accountinfoname
+              %ul
+                %li メールアドレス：
+                %li パスワード：
+                / %li
+                /   【お願い】
+                /   %br ご家庭で、IB生へどのようなサポートをしていいか、困っている方がいらっしゃいます。どのような工夫が考えられますか？ご意見お聞かせください！
+            .col-md-8.accountinfo
+              %ul
+                = form_for @user, url: sessions_path, method: :post do |f|
+                  %li= f.text_field :email
+                  %li= f.password_field :password
+                  / %li
+                  / %input.oldinfo.opinion{:placeholder => "ご意見お聞かせください！", :type => "textarea"}
+                  %li= f.submit 'ログイン', :class => "btn btn-default submitbutton"
+          .clear
+
+  .col-md-3.sidebar
+    = render 'questions/sidebar'
+
+= render 'questions/footer'

@@ -1,0 +1,85 @@
+= render 'questions/header'
+
+.row
+  .col-md-1
+  .col-md-8
+    / CONTENT
+    .content_wrap
+      .content
+        .space10px
+        .space10px
+        - if notice
+          .alert.alert-info= notice
+        %span
+          %h3 マイページ
+          .space10px
+          .space10px
+
+        / お気に入り/いいね！した質問・回答
+        %h3 お気に入り
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+          .clear
+          - @favorite_questions.each do |question|
+            %li.indexcontentbox
+              = link_to (user_question_path(question.user_id, question)) do
+                .float.indexcontent.indexcontent1= question.title[0,14]
+                .float.indexcontent.indexcontent2= question.content[0,6]
+                .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                .float.indexcontent.indexcontent4= question.answers.count
+                .clear
+
+        .space10px
+        .space10px
+        .space10px
+        / 質問
+        %h3 今までの質問
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 質問詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+          .clear
+
+        %ul
+          - @myquestions.each do |question|
+            %li.indexcontentbox
+              = link_to(user_question_path(question.user_id, question))  do
+                .float.indexcontent.indexcontent1= question.title[0,14]
+                .float.indexcontent.indexcontent2= question.content[0,6]
+                .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                .float.indexcontent.indexcontent4= question.answers.count
+                .clear
+        .space10px
+        .space10px
+        .space10px
+        / 回答
+        %h3 今までの回答
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 回答詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+          .clear
+
+        %ul
+          - @myanswers.each do |answer|
+            %li.indexcontentbox
+              = link_to(user_question_path(answer.question.user_id, @question))  do
+                .float.indexcontent.indexcontent1= @question.title[0,14]
+                .float.indexcontent.indexcontent2= answer.content[0,6]
+                .float.indexcontent.indexcontent3= @question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[@question.created_at.wday]})")
+                .float.indexcontent.indexcontent4= @question.answers.count
+                .clear
+
+
+  .sidebar.col-md-3
+    = render 'questions/sidebar'
+
+= render 'questions/footer'
+
+
+
