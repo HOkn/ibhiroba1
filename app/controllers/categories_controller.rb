@@ -6,14 +6,14 @@ class CategoriesController < ApplicationController
       @category = Category.new
       @categories = Category.all
     else
-      redirect_to root_url
+      redirect_to questions_path
     end
   end
 
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to root_url
+      redirect_to questions_path
     else
       redirect_to categories_new_path
     end
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.save
-      redirect_to root_url
+      redirect_to questions_path
     else
       render 'edit'
     end

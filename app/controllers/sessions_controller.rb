@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     password = params_user[:password]
 
     if login(email, password)
-      redirect_to root_url, notice: "ログインできました！"
+      redirect_to questions_path, notice: "ログインできました！"
     else
       @user = User.new(email: email)
       render :new
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to root_url, notice: "ログアウトしました"
+    redirect_to questions_path, notice: "ログアウトしました"
   end
 
   private
