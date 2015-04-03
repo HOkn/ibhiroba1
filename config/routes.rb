@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'categories/new'
+
   get 'users/show'
 
   resource :registrations, only: [:new, :create]

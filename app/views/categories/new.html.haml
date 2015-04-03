@@ -1,0 +1,13 @@
+
+%h1 Categories#new
+
+-@categories.each do |category|
+  = category.id
+  = category.name
+  %br
+
+= form_for :category do |f|
+  %p
+    = f.text_area :name
+  %p
+    = f.submit
