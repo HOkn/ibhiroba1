@@ -70,57 +70,47 @@ header
   background-color: #FF680C
   margin-bottom: 0px
 
-// sidebar
-.sidebar
-  .profile a:hover
-    background-color: rgb(100, 193, 205)
-    opacity: 0.8
-  .ranking a
-    color: white
-    font-style: bold
 
 // link, hover
 footer a
   color: white
   font-style: bold
 
-.sidebar .ranking a:hover, footer a:hover
-  color: white
-// sidebar¥
+// sidebar
 .sidebar
   font-size: 17px
   background-color: #077684
   color: white
   padding-left: 17px
   height: 900px
+  a
+    color: white
+    font-style: bold
+  a:hover
+    color: white
   .profile
     height: 85px
     background-color: #077684
     font-size: 18px
+    .name
+      margin: 10px 0 10px 10px
+      .fa
+        font-size: 30px
+      i
+        margin: 0 15px 0 0
+    .btn .fa
+      font-size: 19px
+    .btn
+      background-color: #4ECADA
+      color: white
+      border-style: none
+      font-style: bold
+  .profile a:hover
+    background-color: rgb(100, 193, 205)
+    opacity: 0.8
 
-// sidebar profile
-
-.profile
-  .name
-    margin: 10px 0 10px 10px
-  .btn
-    background-color: #4ECADA
-    color: white
-    border-style: none
-    font-style: bold
-
-.sidebar
-  .name
-    .fa
-      font-size: 30px
-    i
-      margin: 0 15px 0 0
-  .btn .fa
-    font-size: 19px
 
 // いいね！ボタン統一
-
-
 .profile .btn-primary, .content_wrap .btn-primary
   background-color: #ffae4d
   border-color: #ffae4d
@@ -132,18 +122,6 @@ footer a
 
 body .btn-primary .badge
   color: #ffae4d
-
-
-
-// sidebar IMAGES
-
-  .profile
-    .smile
-      margin-left: 10px
-      width: 50px
-    .fav img
-      margin-left: 40px
-      width: 40px
 
 .question img
   width: 40px
@@ -198,7 +176,7 @@ span.input-group-btn .btn-default
 
 // footer
 footer
-  // position: absolute;
+  color: white
   bottom: 0px
   width: 100%
   height: 80px
@@ -206,6 +184,9 @@ footer
   text-align: center
   .row div
     margin-top: 30px
+  a
+    color: white
+    font-style: bold
 
 // elements
 ul
@@ -227,3 +208,6 @@ ul
   content: ""
   height: 10px
   width: 150px
+
+.alignright
+  text-align: right

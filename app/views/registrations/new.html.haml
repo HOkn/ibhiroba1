@@ -13,75 +13,75 @@
 
           %h3 新規登録
           %p *の箇所はすべて登録してください。
-          .row
-            .col-md-4.accountinfoname
-              %ul
-                %li メールアドレス*：
-                %li 表示名*：
-                %li パスワード*：
-                %li パスワード*：
-                .status 立場*：
-                %li お子様の年齢：
-                %li お子様の年齢：
-                %li 在住国*：
-                %li 都道府県/地域*：
-                %li 学校名：
-                %li ほかに知っている地域：
+          / .row
+          /   .col-md-4.accountinfoname
+          /     %ul
+          /       %li メールアドレス*：
+          /       %li 表示名*：
+          /       %li パスワード*：
+          /       %li パスワード*：
+          /       .status 立場*：
+          /       %li お子様の年齢：
+          /       %li お子様の年齢：
+          /       %li 在住国*：
+          /       %li 都道府県/地域*：
+          /       %li 学校名：
+          /       %li ほかに知っている地域：
 
-                %li 知りたい情報*：
-                %li 答えられる分野：
-                %li 自己紹介：
-                %li Q&A記録の公開*：
-                %li メールマガジン*：
+          /       %li 知りたい情報*：
+          /       %li 答えられる分野：
+          /       %li 自己紹介：
+          /       %li Q&A記録の公開*：
+          /       %li メールマガジン*：
 
-                %li
-                  【お願い】
-                  %br 国際的に活躍できるお子さんになってほしいけれど、家庭ではどのようなサポートができるでしょうか・・？
-                  %br 困っている方がいらっしゃいます。ご意見、どうかお聞かせください！
-            .col-md-8.accountinfo
-              %ul
-                = form_for @user, url: registrations_path, method: :post do |f|
-                  %li= f.text_field :email, :placeholder => "example@example.com"
-                  %li= f.text_field :screen_name, :placeholder => "4~24文字"
-                  %li= f.password_field :password
-                  %li= f.password_field :password_confirmation
+          /       %li
+          /         【お願い】
+          /         %br 国際的に活躍できるお子さんになってほしいけれど、家庭ではどのようなサポートができるでしょうか・・？
+          /         %br 困っている方がいらっしゃいます。ご意見、どうかお聞かせください！
+          /   .col-md-8.accountinfo
+          /     %ul
+          /       = form_for @user, url: registrations_path, method: :post do |f|
+          /         %li= f.text_field :email, :placeholder => "example@example.com"
+          /         %li= f.text_field :screen_name, :placeholder => "4~24文字 半角"
+          /         %li= f.password_field :password
+          /         %li= f.password_field :password_confirmation
 
-                  %li.radio.float=f.radio_button :status, string: "par"
-                  　　保護者
-                  .clear
-                  %li.radio.float=f.radio_button :status, string: "IBpar"
-                  　　IB生の保護者
-                  .clear
-                  %li.radio.float=f.radio_button :status, string: "teach"
-                  　　教員
-                  .clear
-                  %li.radio.float=f.radio_button :status, string: "IBteach"
-                  　　IB教員
-                  .clear
-                  %li.radio.float=f.radio_button :status, string: "IBstud"
-                  　　IB生
-                  .clear
-                  %li
-                  = f.text_field :child_age1, :class => "child_age"
-                  歳
-                  %li
-                  = f.text_field :child_age2, :class => "child_age"
-                  歳
-                  %li= f.text_field :residence_country, :placeholder => "(例)日本"
-                  %li= f.text_field :residencenow, :placeholder => "(例)東京都"
-                  %li= f.text_field :school, :placeholder => "学校名(非公開)"
-                  %li= f.text_field :origin, :placeholder => "(例)アメリカ"
-                  %li= f.text_field :wannaknow, :placeholder => "高校進路、英語、家庭学習などなど"
-                  %li= f.text_field :know, :placeholder => "みなさまの力が必要です！"
-                  %li= f.text_field :bio
-                  %li.checkbox.float= f.check_box :privacy, {}, true, false
-                  　　サイト内公開
-                  .clear
-                  %li.checkbox.float= f.check_box :mailmagazine, {}, true, false
-                  　　受け取る
-                  %li= f.text_field :comment, :placeholder => "ご意見お聞かせください！", :class => "opinionbox"
-                  %li= f.submit '登録する', :class => "btn btn-default submitbutton"
-          .clear
+          /         %li.radio.float=f.radio_button :status, string: "par"
+          /         　　保護者
+          /         .clear
+          /         %li.radio.float=f.radio_button :status, string: "IBpar"
+          /         　　IB生の保護者
+          /         .clear
+          /         %li.radio.float=f.radio_button :status, string: "teach"
+          /         　　教員
+          /         .clear
+          /         %li.radio.float=f.radio_button :status, string: "IBteach"
+          /         　　IB教員
+          /         .clear
+          /         %li.radio.float=f.radio_button :status, string: "IBstud"
+          /         　　IB生
+          /         .clear
+          /         %li
+          /         = f.text_field :child_age1, :class => "child_age"
+          /         歳
+          /         %li
+          /         = f.text_field :child_age2, :class => "child_age"
+          /         歳
+          /         %li= f.text_field :residence_country, :placeholder => "(例)日本"
+          /         %li= f.text_field :residencenow, :placeholder => "(例)東京都"
+          /         %li= f.text_field :school, :placeholder => "学校名(非公開)"
+          /         %li= f.text_field :origin, :placeholder => "(例)アメリカ"
+          /         %li= f.text_field :wannaknow, :placeholder => "高校進路、英語、家庭学習などなど"
+          /         %li= f.text_field :know, :placeholder => "みなさまの力が必要です！"
+          /         %li= f.text_field :bio
+          /         %li.checkbox.float= f.check_box :privacy, {}, true, false
+          /         　　サイト内公開
+          /         .clear
+          /         %li.checkbox.float= f.check_box :mailmagazine, {}, true, false
+          /         　　受け取る
+          /         %li= f.text_field :comment, :placeholder => "ご意見お聞かせください！", :class => "opinionbox"
+          /         %li= f.submit '登録する', :class => "btn btn-default submitbutton"
+          / .clear
 
 
   .col-md-3.sidebar
