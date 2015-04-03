@@ -7,7 +7,7 @@ gem 'sqlite3', group: :development
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 gem 'haml-rails'
-gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'sorcery'
 
