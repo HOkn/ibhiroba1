@@ -19,7 +19,6 @@
           %li.float.indextop4 回答数
         .clear
 
-        = "category_id == 1, "家庭学習""
         %ul
           - @question.each do |question|
             -if @question.categories.select(:id) == 1

@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
-    if @category.save
+    if @category.update_attributes(category_params)
       redirect_to questions_path
     else
       render 'edit'
@@ -39,8 +39,11 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
+    redirect_to new_category_path
   end
 
+  def index_category
+  end
 
   private
   def category_params
