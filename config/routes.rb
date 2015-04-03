@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'categories/new'
+  resource :categories
 
   get 'users/show'
 

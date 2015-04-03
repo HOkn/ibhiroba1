@@ -6,7 +6,7 @@
   = category.name
   %br
 
-= form_for :category do |f|
+= form_for :category, url: categories_path do |f|
   %p
     = f.text_area :name
   %p
