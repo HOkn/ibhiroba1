@@ -3,9 +3,10 @@
   .col-md-9
     .content_wrap
       .content
+        =link_to "ログアウト", sessions_path, :class => "a btn btn-default logoutbtn float_right", method: :delete
+        .clear
         .accountsetting
-          =link_to "ログアウト", sessions_path, :class => "a btn btn-default logoutbtnfloat_right", method: :delete
-          .clear
+
 
           %h3 設定変更
           .space10px
@@ -18,7 +19,6 @@
                 %li メールアドレス：
                 %li 表示名：
                 .status 立場：
-                %li お子様の年齢：
                 %li お子様の年齢：
                 %li 在住国：
                 %li 都道府県/地域：
@@ -68,9 +68,6 @@
                   %li.child_age
                   = f.text_field :child_age1, :class => "child_age"
                   歳(非公開)
-                  %li.child_age
-                  = f.text_field :child_age2, :class => "child_age"
-                  歳(非公開)
                   %li= f.text_field :residence_country, :placeholder => "(例)日本"
                   %li= f.text_field :residencenow, :placeholder => "(例)東京都"
                   %li= f.text_field :school, :placeholder => "学校名(非公開)"
@@ -88,7 +85,7 @@
                   .space10px
                   %li= f.password_field :password
                   %li= f.password_field :password_confirmation
-                  %li= f.submit '変更を保存', :class => "btn btn-default submitbutton"
+                  %li= f.submit '変更を保存', :class => "btn btn-default submitbutton float_right"
           .clear
 
 
