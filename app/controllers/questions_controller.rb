@@ -9,7 +9,9 @@ class QuestionsController < ApplicationController
     @user = current_user
     @question = Question.find(params[:id])
     @question = Question.includes(:answers).find(params[:id])
+    @questionuser = User.find(@question.user_id)
     @answer = Answer.new
+    @answers = @question.answers
   end
 
 

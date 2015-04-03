@@ -11,6 +11,8 @@
             = @question.title
           #question_info
             = @question.created_at.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[Time.now.wday]})")
+            = @questionuser.residence_country
+            = "在住"
           #question_content
             = @question.content
             = link_to image_tag('FacebookIcon.png', id:'FacebookIcon'), 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank, :class => "float_right FacebookIcon"
@@ -24,20 +26,22 @@
                 = link_to "編集", edit_user_question_path(current_user, @question), :class => "a edit btn btn-primary float_right"
             -else
               = link_to "質問を保存", new_registrations_path, :class => "a btn btn-primary float_right", method: :get
-        .answerlink.a.btn.btn-default
-          =link_to "回答する", :action => 'show', :anchor => 'answer'
+        - if @answers.count >= 3
+          .answerlink
+            =link_to "回答する", :action => 'show', :anchor => 'answer'
 
 
         - @question.answers.each do |answer|
           .answer
             #answer_info
               =answer.created_at.strftime("%m/%d(#{%w(日 月 火 水 木 金 土)[Time.now.wday]})")
-              / ="ユーザ名："
-              / =answer.user.screen_name
-              / ="滞在国："
-              / =answer.user.residence_country
-              / ="滞在地："
-              / =answer.user.residencenow
+              =answer.user.screen_name
+              ="さん"
+              %br
+              ="滞在国："
+              =answer.user.residence_country
+              ="滞在地："
+              =answer.user.residencenow
               / ="立場："
               / =answer.user.status
             #answer_content
@@ -67,7 +71,7 @@
 
       / ここに関連するキーワードを入れる?
 
-      = render 'bottombox'
+      / = render 'bottombox'
   / CONTENT end
 
   .sidebar.col-md-3

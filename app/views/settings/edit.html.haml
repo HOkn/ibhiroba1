@@ -4,10 +4,12 @@
     .content_wrap
       .content
         .accountsetting
-          =link_to "ログアウト", sessions_path, :class => "a btn btn-default float_right", method: :delete
+          =link_to "ログアウト", sessions_path, :class => "a btn btn-default logoutbtnfloat_right", method: :delete
           .clear
 
           %h3 設定変更
+          .space10px
+          .space10px
           - @user.errors.each do |attr, msg|
             .alert.alert-danger= msg
           .row
@@ -19,7 +21,7 @@
                 %li お子様の年齢：
                 %li お子様の年齢：
                 %li 在住国：
-                %li 都道府県/地域*：
+                %li 都道府県/地域：
                 %li 学校名：
                 %li ほかに知っている地域：
 
@@ -38,20 +40,30 @@
                 = form_for @user, url: settings_path, method: :put do |f|
                   %li= f.text_field :email, :placeholder => "example@example.com"
                   %li= f.text_field :screen_name, :placeholder => "4~24文字"
-                  %li.radio.float=f.radio_button :status, string: "par"
-                  　　保護者
+                  %li.radio
+                    =f.radio_button :status, string: "par"
+                    .text
+                      保護者
                   .clear
-                  %li.radio.float=f.radio_button :status, string: "IBpar"
-                  　　IB生の保護者
+                  %li.radio
+                    =f.radio_button :status, string: "IBpar"
+                    .text
+                      IB生の保護者
                   .clear
-                  %li.radio.float=f.radio_button :status, string: "teach"
-                  　　教員
+                  %li.radio
+                    =f.radio_button :status, string: "teach"
+                    .text
+                      教員
                   .clear
-                  %li.radio.float=f.radio_button :status, string: "IBteach"
-                  　　IB教員
+                  %li.radio
+                    =f.radio_button :status, string: "IBteach"
+                    .text
+                      IB教員
                   .clear
-                  %li.radio.float=f.radio_button :status, string: "IBstud"
-                  　　IB生
+                  %li.radio
+                    =f.radio_button :status, string: "IBstud"
+                    .text
+                      IB生
                   .clear
                   %li.child_age
                   = f.text_field :child_age1, :class => "child_age"
