@@ -7,6 +7,28 @@
       .content
         - if notice
           .alert.alert-info= notice
+
+        %h2 はじめまして。
+        %h2 IBひろばは、探求型の国際教育に関心があるみなさまのための
+        %h2 情報交換の場所です。
+
+        .space10px
+        %h4 国際バカロレアや留学、インター校について、
+        %h4 国内外のみなさまに情報交換をしていただける、掲示板コミュニティ
+
+        .space10px
+        %h5 新規登録をして、ぜひご参加下さいませ。
+        .space10px
+        %h5 初めてのサイト開発で至らない部分もあるかと思いますが、
+        %h5 少しでも自らの両親ふくめ、みなさまのお役に立てるよう尽くしてまいります。
+
+        %h5 管理人　岡庭は、国際バカロレア４５点満点、海外高校首席卒業者で、中学時代から日本と海外の教育について情報発信をしてまいりました。すべての質問に回答がつきます。
+        %h5 よろしくお願いいたします。
+
+        .space10px
+        .space10px
+        .space10px
+        .space10px
         .space10px
         %h3 すべての質問一覧
         .space10px
@@ -35,6 +57,18 @@
                 .float.indexcontent.indexcontent4= question.answers.count
                 .float.indexcontent.indexcontent5= question.favorites.count
                 .clear
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+
+      = render 'bottombox'
   .sidebar.col-md-3
     = render 'sidebar'
 = render 'footer'
