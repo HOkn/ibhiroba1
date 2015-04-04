@@ -20,7 +20,6 @@ class QuestionsController < ApplicationController
     @categories = Category.all
   end
 
-
   def create
     @user=current_user
     @question = Question.new(question_params)
@@ -52,7 +51,6 @@ class QuestionsController < ApplicationController
       render 'edit'
     end
   end
-
 
   def index_category
     @questions = Question.all
