@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'slides/show'
+
   resources :categories
 
   get 'users/show'
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   resources :questions, only: [] do
       resource :favorites, only: [:create, :destroy]
       resources :answers
+
   end
 
   root to: 'questions#index'
