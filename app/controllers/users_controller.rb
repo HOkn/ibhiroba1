@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   def index
     if current_user.email == "haru.okaniwa@ezweb.ne.jp"
       @users = User.all
+    else
+      redirect_to questions_path
     end
   end
 
