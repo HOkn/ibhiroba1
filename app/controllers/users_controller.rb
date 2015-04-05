@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user.email == "haru.okaniwa@ezweb.ne.jp"
+      @users = User.all
   end
 
   # GET /users/1
