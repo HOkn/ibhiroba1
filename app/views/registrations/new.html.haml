@@ -16,7 +16,7 @@
 
           %table
             %tbody
-              = form_for @user, url: settings_path, method: :put do |f|
+              = form_for @user, url: registrations_path, method: :post do |f|
                 %tr
                   %td.alignright
                     メールアドレス*：
