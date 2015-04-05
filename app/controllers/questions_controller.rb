@@ -54,9 +54,8 @@ class QuestionsController < ApplicationController
 
   def index_category
     @questions = Question.all
+    @question_id = []
     @question_id = QuestionCategory.question_id
-
-    # @question = Question.where(@question_id: 1)
   end
 
 
