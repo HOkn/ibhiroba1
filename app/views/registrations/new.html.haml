@@ -24,7 +24,7 @@
                     = f.text_field :email, :placeholder => "example@example.com"
                 %tr
                   %td.alignright
-                    表示名*：
+                    表示名(半角のみ)*：
                   %td
                     = f.text_field :screen_name, :placeholder => "4~24文字 半角"
                 %tr
@@ -64,12 +64,12 @@
                     = f.text_field :child_age1, :class => "child_age"
                 %tr
                   %td.alignright
-                    在住国：
+                    在住国*：
                   %td
                     = f.text_field :residence_country, :placeholder => "(例)日本"
                 %tr
                   %td.alignright
-                    都道府県/地域：
+                    都道府県/地域*：
                   %td
                     = f.text_field :residencenow, :placeholder => "(例)東京都"
                 %tr
@@ -103,13 +103,13 @@
                   %td.alignright
                     質問記録の公開：
                   %td.checkbox
-                    = f.check_box :privacy, {}, true, false
+                    = f.check_box :privacy, {checked: "checked"}, true, false
                     　サイト内公開
                 %tr
                   %td.alignright
                     メールマガジン：
                   %td.checkbox
-                    = f.check_box :mailmagazine, {}, true, false
+                    = f.check_box :mailmagazine, {checked: "checked"}, true, false
                     　受け取る
                 %tr
                   %td.alignright
@@ -130,7 +130,7 @@
                 %tr
                   %td.alignright
                   %td.float
-                    = f.submit '変更を保存', :class => "btn btn-default submitbutton float_right"
+                    = f.submit '登録', :class => "btn btn-default submitbutton float_right"
                   /       %li
                   /         【お願い】
                   /         %br 国際的に活躍できるお子さんになってほしいけれど、家庭ではどのようなサポートができるでしょうか・・？

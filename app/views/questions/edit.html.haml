@@ -28,6 +28,7 @@
         .category1
           .space10px
           カテゴリー（複数選択可能）
+          %br
           - test = []
           - @category.each_with_index do |c, i|
             - test[i] = c.id
