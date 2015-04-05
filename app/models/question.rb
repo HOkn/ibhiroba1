@@ -8,7 +8,7 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :categories
 
 
-  validates :title, presence: true, length: { maximum: 40 }, uniqueness: { case_sensitive: false }
+  validates :title, presence: true, length: { maximum: 10 }, uniqueness: { case_sensitive: false }
   validates :content, presence: true, length: { maximum: 2000 }
   # validates :askeduser, length: { maximum: 20 }
   # validates :keyword1, length: { maximum: 30 }
