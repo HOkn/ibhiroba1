@@ -59,6 +59,13 @@
                       IB生
                 %tr
                   %td.alignright
+                  %td.radio
+                    =f.radio_button :status, string: "student"
+                    .text
+                      生徒
+
+                %tr
+                  %td.alignright
                     お子様の年齢：
                   %td
                     = f.text_field :child_age1, :class => "child_age"
