@@ -7,10 +7,8 @@ class RegistrationsController < ApplicationController
     @user = User.new(params_user)
     if @user.save
       login(:email, :password)
-      raise
       redirect_to questions_path
     else
-      raise
       render :new
     end
   end
