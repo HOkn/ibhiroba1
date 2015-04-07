@@ -10,17 +10,17 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
   resource :settings, only: [:edit, :update]
 
-  resources :users, only: [:show, :index] do
-    resources :questions, except: [:index]
-  end
+  resources :users, only: [:show, :index]
+
+
+  resources :questions
 
   get "/questions", to: "questions#index"
   get "/questions/category", to: "questions#index_category"
 
-  resources :questions, only: [] do
+  resources :questions do
       resource :favorites, only: [:create, :destroy]
       resources :answers
-
   end
 
   root to: 'questions#index'
