@@ -10,11 +10,14 @@
         .space10px
         .space10px
         %h1 Listing users
+
         %table
           %thead
             %tr
               %th screen_name
               %th email
+              %th status
+              %th wannaknow
               %th users/:id
 
           %tbody
@@ -22,6 +25,8 @@
               %tr
                 %td= link_to user.screen_name, user
                 %td= link_to user.email
+                %td= user.status
+                %td= user.wannaknow
                 %td= link_to 'Show', user
 
 
