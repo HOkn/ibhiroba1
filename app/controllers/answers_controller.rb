@@ -6,9 +6,9 @@ class AnswersController < ApplicationController
     @answer = @question.answers.build(answer_params)
     @answer.user_id = @user.id
     if @answer.save
-      redirect_to user_question_path(@user, @question)
+      redirect_to question_path(@question)
     else
-      redirect_to user_question_path(@user, @question)
+      redirect_to question_path(@question)
     end
   end
 
@@ -27,7 +27,7 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @answer = @question.answers.find(params[:id])
     if @answer.update_attributes(answer_params)
-      redirect_to user_question_path(@user, @question)
+      redirect_to question_path(@question)
     else
       render 'edit'
     end

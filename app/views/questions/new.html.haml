@@ -8,7 +8,7 @@
     .content_wrap
       .content
 
-        =form_for :question, url: user_questions_path do |f|
+        =form_for :question, url: questions_path do |f|
           - if @question.errors.any?
             #error_explanation
               %h2

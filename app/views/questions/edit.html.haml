@@ -5,7 +5,7 @@
   .col-md-8
 
     %h1 質問を編集
-    =form_for :question, url: user_question_path(@user, @question), method: :put do |f|
+    =form_for :question, url: question_path( @question), method: :put do |f|
       - if @question.errors.any?
         #error_explanation
           %h2
