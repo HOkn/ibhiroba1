@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :answers
   has_many :favorites, dependent: :destroy
 
-  validates :screen_name, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A[a-z][a-z0-9]+\z/ }, length: { in: 2..24 }
+  validates :screen_name, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A[a-z][a-z0-9]+\z/ }, length: { in: 1..24 }
   validates :email, presence: true, uniqueness: { case_sensitive: false }
 
   validates :password, confirmation: true, length: { in: 2..26 }
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   validates :child_age2, length: { maximum: 2 }
 
   validates :residence_country, presence: true, length: { in: 1..25 }
-  validates :residencenow, presence: true,length: { in: 1..24 }
+  validates :residencenow, presence: true, length: { in: 1..24 }
 
   validates :school, length: { maximum: 70}
   validates :origin, length: { maximum: 25 }
