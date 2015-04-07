@@ -45,7 +45,9 @@
               / ="立場："
               / =answer.user.status
             #answer_content
-              =answer.content
+              =simple_format (answer.content)
+
+
               - if logged_in?
                 - if current_user.id == answer.user_id
                   = link_to "編集", edit_question_answer_path(@question, answer), :class => "a edit btn btn-primary float_right"
