@@ -20,11 +20,11 @@ class User < ActiveRecord::Base
   validates :school, length: { maximum: 70}
   validates :origin, length: { maximum: 25 }
 
-  validates :wannaknow, length: { maximum: 60 }
-  validates :know, length: { maximum: 50}
+  validates :wannaknow, length: { maximum: 2000 }
+  validates :know, length: { maximum: 2000}
 
-  validates :bio, length: { maximum: 200 }
-  validates :comment, length: { maximum: 100 }
+  validates :bio, length: { maximum: 2000 }
+  validates :comment, length: { maximum: 2000 }
 
 
 end
