@@ -4,16 +4,12 @@ Rails.application.routes.draw do
 
   resources :categories
 
+  resources :users, only: [:show, :index]
   get 'users/show'
-
   resource :registrations, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
   resource :settings, only: [:edit, :update]
 
-  resources :users, only: [:show, :index]
-
-
-  resources :questions
 
   get "/questions", to: "questions#index"
   get "/questions/category", to: "questions#index_category"
@@ -24,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'questions#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
