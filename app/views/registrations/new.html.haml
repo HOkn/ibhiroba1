@@ -30,40 +30,39 @@
                 %tr
                   %td.alignright 立場*：
                   %td.radio
-                    =f.radio_button :status, value = "parent"
+                    =f.radio_button :status, :value => "保護者"
                     .text
                       保護者
                 %tr
                   %td.alignright
                   %td.radio
-                    =f.radio_button :status, value = "ibparent"
+                    =f.radio_button :status, :value => "IB生の保護者"
                     .text
                       IB生の保護者
                 %tr
                   %td.alignright
                   %td.radio
-                    =f.radio_button :status, value = "teacher"
+                    =f.radio_button :status, :value => "教育関係者"
                     .text
-                      教員
+                      教員/教育関係者
                 %tr
                   %td.alignright
                   %td.radio
-                    =f.radio_button :status, value = "ibteacher"
+                    =f.radio_button :status, :value => "IB教員"
                     .text
                       IB教員
                 %tr
                   %td.alignright
                   %td.radio
-                    =f.radio_button :status, value = "ibstudent"
+                    =f.radio_button :status, :value => "IB生/卒業生"
                     .text
-                      IB生
+                      IB生/卒業生
                 %tr
                   %td.alignright
                   %td.radio
-                    =f.radio_button :status, value = "student"
+                    =f.radio_button :status, :value => "生徒"
                     .text
                       生徒
-
                 %tr
                   %td.alignright
                     お子様の年齢：
