@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true, length: { in: 2..26 }
   validates :password_confirmation, presence: true, if: :password
 
-  validates :status
+  # validates :status
   validates :child_age1, length: { maximum: 2 }
   validates :child_age2, length: { maximum: 2 }
 
