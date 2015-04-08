@@ -25,7 +25,7 @@
           .clear
           - @favorite_questions.each do |question|
             %li.indexcontentbox
-              = link_to (question_path(n)) do
+              = link_to (question_path(question.id)) do
                 .float.indexcontent.indexcontent1= question.title[0,10]
                 .float.indexcontent.indexcontent2= question.content[0,6]
                 .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
@@ -46,7 +46,7 @@
         %ul
           - @myquestions.each do |question|
             %li.indexcontentbox
-              = link_to(question_path(n))  do
+              = link_to(question_path(question.id))  do
                 .float.indexcontent.indexcontent1= question.title[0,14]
                 .float.indexcontent.indexcontent2= question.content[0,6]
                 .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")

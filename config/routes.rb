@@ -1,23 +1,25 @@
 Rails.application.routes.draw do
 
-  get 'slides/show'
-
-  resources :categories
-
-  resources :users, only: [:show, :index]
-  get 'users/show'
   resource :registrations, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
   resource :settings, only: [:edit, :update]
 
+  resources :users, only: [:index, :show]
+  # get '/users/:id' => 'users#show'
+  # get '/users' => 'users#index'
 
+
+  resources :categories
   get "/questions", to: "questions#index"
   get "/questions/category", to: "questions#index_category"
 
   resources :questions do
-      resource :favorites, only: [:create, :destroy]
-      resources :answers
+    resource :favorites, only: [:create, :destroy]
+    resources :answers
   end
+
+  get 'slides/show'
+
 
   root to: 'questions#index'
 

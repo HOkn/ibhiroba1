@@ -16,7 +16,7 @@
           /   %i.fa.fa-thumbs-o-up
           /   %span.badge 4
         .col-md-4
-          = link_to "Q&A記録", user_path(current_user.id), :class => "a btn btn-default"
+          = link_to "Q&A記録", user_path(current_user), :class => "a btn btn-default"
         .col-md-4
           = link_to "設定", edit_settings_path(current_user), :class => "a btn btn-default"
       - else

@@ -14,7 +14,6 @@ class QuestionsController < ApplicationController
     @answers = @question.answers
   end
 
-
   def new
     @question = Question.new
     @categories = Category.all
