@@ -26,5 +26,4 @@ class User < ActiveRecord::Base
   validates :bio, length: { maximum: 2000 }
   validates :comment, length: { maximum: 2000 }
 
-
 end
