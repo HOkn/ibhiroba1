@@ -23,7 +23,7 @@
                 = link_to "質問を保存", question_favorites_path(@question), :class => "a btn btn-primary float_right", method: :post
 
               - if current_user.id == @question.user_id
-                = link_to "編集", edit_question_path(current_user, @question), :class => "a edit btn btn-primary float_right"
+                = link_to "編集", edit_question_path(@question), :class => "a edit btn btn-primary float_right"
             -else
               = link_to "質問を保存", new_registrations_path, :class => "a btn btn-primary float_right", method: :get
         - if @answers.count >= 3
