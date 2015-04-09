@@ -78,16 +78,16 @@
                     都道府県/地域*：
                   %td
                     = f.text_field :residencenow, :placeholder => "(例)東京都"
-                %tr
-                  %td.alignright
-                    学校名：
-                  %td
-                    = f.text_field :school, :placeholder => "学校名(非公開)"
-                %tr
-                  %td.alignright
-                    ほかに知っている地域：
-                  %td
-                    = f.text_field :origin, :placeholder => "(例)アメリカ"
+                  %tr
+                    %td.alignright
+                      学校名：
+                    %td
+                      = f.text_field :school, :placeholder => "学校名(非公開)"
+                  %tr
+                    %td.alignright
+                      ほかに知っている地域：
+                    %td
+                      = f.text_field :origin, :placeholder => "(例)アメリカ"
                 %tr
                   %td.alignright
                     知りたい分野*：
@@ -105,23 +105,23 @@
                     = f.text_area :bio, size: "20"
                 .space10px
                 .space10px
-                %tr
-                  %td.alignright
-                    質問記録の公開：
-                  %td.checkbox
-                    = f.check_box :privacy, {checked: "checked"}, true, false
-                    　サイト内公開
-                %tr
-                  %td.alignright
-                    メールマガジン：
-                  %td.checkbox
-                    = f.check_box :mailmagazine, {checked: "checked"}, true, false
-                    　受け取る
-                %tr
-                  %td.alignright
-                    .space10px
-                    .space10px
-                  %td
+                / %tr
+                /   %td.alignright
+                /     質問記録の公開：
+                /   %td.checkbox
+                /     = f.check_box :privacy, {checked: "checked"}, true, false
+                /     　サイト内公開
+                / %tr
+                /   %td.alignright
+                /     メールマガジン：
+                /   %td.checkbox
+                /     = f.check_box :mailmagazine, {checked: "checked"}, true, false
+                /     　受け取る
+                / %tr
+                /   %td.alignright
+                /     .space10px
+                /     .space10px
+                /   %td
 
                 %tr
                   %td.alignright
