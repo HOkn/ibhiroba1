@@ -5,11 +5,7 @@
       .content
         .accountsetting
           =link_to "ログインする", new_sessions_path, :class => "a btn btn-default loginbtn float_right"
-
           .clear
-          =action_name
-          =request.method
-
           - if action_name == "create"
             - @user.errors.each do |attr, message|
               .alert.alert-danger= message
