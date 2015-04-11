@@ -5,7 +5,10 @@
       .content
         .accountsetting
           =link_to "ログインする", new_sessions_path, :class => "a btn btn-default loginbtn float_right"
+
           .clear
+          =action_name
+          =request.method
 
           - if action_name == "create"
             - @user.errors.each do |attr, message|
@@ -15,10 +18,9 @@
           %p 　　　　　*の箇所はすべて登録してください。
           / .formzu
           /   %a{:href => "javascript:void(0)", :onClick => "javascript:window.open('http://ws.formzu.net/fgen/S21157404/', 'mailform1', 'toolbar=no, location=no, status=yes, menubar=yes, resizable=yes, scrollbars=yes, width=600, height=500, top=100, left=100')", :class => "a btn btn-default"}新規登録
-          = link_to "新規登録", new_registrations_path, :class => "a btn btn-default"s
-          %table
-            %tbody
-              = form_for @user, url: registrations_path, method: :post do |f|
+          =form_for @user, url: registrations_path, method: :post do |f|
+            %table
+              %tbody
                 %tr
                   %td.alignright
                     メールアドレス*：
