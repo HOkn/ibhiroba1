@@ -6,7 +6,9 @@
   .col-md-9
     .content_wrap
       .content
-
+        - @questions.each do |question|
+          - if question.categories.includes(3)
+            = question.title
 
         / カテゴリ１
         %h3
@@ -19,16 +21,22 @@
           %li.float.indextop4 回答数
         .clear
 
-        %ul
-          - @question.each do |question|
-            -if @question.categories.select(:id) == 1
-              %li.indexcontentbox
-                = link_to question_path(question) do
-                  .float.indexcontent.indexcontent1= question.title[0,14]
-                  .float.indexcontent.indexcontent2= question.content[0,6]
-                  .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
-                  .float.indexcontent.indexcontent4= question.answers.count
-                .clear
+          / %ul
+          - @questions.each do |question|
+            - array = Array.new
+            - array = question.categories
+            - if array.includes(3)
+              / - q = []
+              / - q = array.questions_id
+              – q.title
+              / =question
+              / %li.indexcontentbox
+              /   = link_to question_path(q) do
+              /     .float.indexcontent.indexcontent1= q.title[0,14]
+              /     .float.indexcontent.indexcontent2= q.content[0,6]
+              /     .float.indexcontent.indexcontent3= q.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+              /     .float.indexcontent.indexcontent4= q.answers.count
+              /   .clear
 
         / カテゴリ２
         .space10px
@@ -43,7 +51,6 @@
           %li.float.indextop3 投稿時
           %li.float.indextop4 回答数
         .clear
-
         / %ul
         /   - @questions.where(category2: true).each do |question|
         /     %li.indexcontentbox
@@ -55,20 +62,33 @@
         /       .clear
 
 
-        / / カテゴリ３
-        / .space10px
-        / .space10px
-        / .space10px
-        / .space10px
-        / %h3
-        /   大学評判
+        / カテゴリ３
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        %h3
+          大学評判
 
-        / %ul
-        /   %li.float.indextop1 質問
-        /   %li.float.indextop2 詳細
-        /   %li.float.indextop3 投稿時
-        /   %li.float.indextop4 回答数
-        / .clear
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+        .clear
+        %ul
+          - @questions.each_with_index do |question|
+            - array = Array.new
+            - array = question.categories
+            -if array.select(:category_id).includes(3)
+              %li.indexcontentbox
+                = link_to question_path(question) do
+                  .float.indexcontent.indexcontent1= question.title[0,14]
+                  .float.indexcontent.indexcontent2= question.content[0,6]
+                  .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                  .float.indexcontent.indexcontent4= question.answers.count
+                .clear
+
 
         / %ul
         /   - @questions.where(category3: true).each do |question|
@@ -80,19 +100,32 @@
         /         .float.indexcontent.indexcontent4= question.answers.count
         /       .clear
 
-        / / カテゴリ４
-        / .space10px
-        / .space10px
-        / .space10px
-        / .space10px
-        / %h3
-        /   小学校/IB PYP
-        / %ul
-        /   %li.float.indextop1 質問
-        /   %li.float.indextop2 詳細
-        /   %li.float.indextop3 投稿時
-        /   %li.float.indextop4 回答数
-        / .clear
+        / カテゴリ４
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        %h3
+          小学校/IB PYP
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+        .clear
+
+        %ul
+          - @questions.each_with_index do |question|
+            - array = Array.new
+            - array = question.categories
+            -if array.select(:category_id).includes(4)
+              %li.indexcontentbox
+                = link_to question_path(question) do
+                  .float.indexcontent.indexcontent1= question.title[0,14]
+                  .float.indexcontent.indexcontent2= question.content[0,6]
+                  .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                  .float.indexcontent.indexcontent4= question.answers.count
+                .clear
 
         / %ul
         /   - @questions.where(category4: true).each do |question|
@@ -104,19 +137,32 @@
         /         .float.indexcontent.indexcontent4= question.answers.count
         /       .clear
 
-        / / 5
-        / .space10px
-        / .space10px
-        / .space10px
-        / .space10px
-        / %h3
-        /   中学校/IB MYP
-        / %ul
-        /   %li.float.indextop1 質問
-        /   %li.float.indextop2 詳細
-        /   %li.float.indextop3 投稿時
-        /   %li.float.indextop4 回答数
-        / .clear
+        / 5
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        %h3
+          中学校/IB MYP
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+        .clear
+
+        %ul
+          - @questions.each_with_index do |question|
+            - array = Array.new
+            - array = question.categories
+            -if array.select(:category_id).includes(5)
+              %li.indexcontentbox
+                = link_to question_path(question) do
+                  .float.indexcontent.indexcontent1= question.title[0,14]
+                  .float.indexcontent.indexcontent2= question.content[0,6]
+                  .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                  .float.indexcontent.indexcontent4= question.answers.count
+                .clear
 
         / %ul
         /   - @questions.where(category5: true).each do |question|
@@ -129,19 +175,31 @@
         /       .clear
 
 
-        / / 6
-        / .space10px
-        / .space10px
-        / .space10px
-        / .space10px
-        / %h3
-        /   高校/IB DP
-        / %ul
-        /   %li.float.indextop1 質問
-        /   %li.float.indextop2 詳細
-        /   %li.float.indextop3 投稿時
-        /   %li.float.indextop4 回答数
-        / .clear
+        / 6
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        %h3
+          高校/IB DP
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+        .clear
+        %ul
+          - @questions.each_with_index do |question|
+            - array = Array.new
+            - array = question.categories
+            -if array.select(:category_id).includes(6)
+              %li.indexcontentbox
+                = link_to question_path(question) do
+                  .float.indexcontent.indexcontent1= question.title[0,14]
+                  .float.indexcontent.indexcontent2= question.content[0,6]
+                  .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                  .float.indexcontent.indexcontent4= question.answers.count
+                .clear
 
         / %ul
         /   - @questions.where(category6: true).each do |question|
@@ -153,19 +211,31 @@
         /         .float.indexcontent.indexcontent4= question.answers.count
         /       .clear
 
-        / / 7
-        / .space10px
-        / .space10px
-        / .space10px
-        / .space10px
-        / %h3
-        /   課外活動/CAS
-        / %ul
-        /   %li.float.indextop1 質問
-        /   %li.float.indextop2 詳細
-        /   %li.float.indextop3 投稿時
-        /   %li.float.indextop4 回答数
-        / .clear
+        / 7
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        %h3
+          課外活動/CAS
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+        .clear
+        %ul
+          - @questions.each_with_index do |question|
+            - array = Array.new
+            - array = question.categories
+            -if array.select(:category_id).includes(7)
+              %li.indexcontentbox
+                = link_to question_path(question) do
+                  .float.indexcontent.indexcontent1= question.title[0,14]
+                  .float.indexcontent.indexcontent2= question.content[0,6]
+                  .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                  .float.indexcontent.indexcontent4= question.answers.count
+                .clear
 
         / %ul
         /   - @questions.where(category7: true).each do |question|
@@ -178,19 +248,31 @@
         /       .clear
 
 
-        / / 8
-        / .space10px
-        / .space10px
-        / .space10px
-        / .space10px
-        / %h3
-        /   TOK/EE
-        / %ul
-        /   %li.float.indextop1 質問
-        /   %li.float.indextop2 詳細
-        /   %li.float.indextop3 投稿時
-        /   %li.float.indextop4 回答数
-        / .clear
+        / 8
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        %h3
+          TOK/EE
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+        .clear
+        %ul
+          - @questions.each_with_index do |question|
+            - array = Array.new
+            - array = question.categories
+            -if array.select(:category_id).includes(8)
+              %li.indexcontentbox
+                = link_to question_path(question) do
+                  .float.indexcontent.indexcontent1= question.title[0,14]
+                  .float.indexcontent.indexcontent2= question.content[0,6]
+                  .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                  .float.indexcontent.indexcontent4= question.answers.count
+                .clear
 
         / %ul
         /   - @questions.where(category8: true).each do |question|
@@ -202,19 +284,31 @@
         /         .float.indexcontent.indexcontent4= question.answers.count
         /       .clear
 
-        / / 9
-        / .space10px
-        / .space10px
-        / .space10px
-        / .space10px
-        / %h3
-        /   試験勉強
-        / %ul
-        /   %li.float.indextop1 質問
-        /   %li.float.indextop2 詳細
-        /   %li.float.indextop3 投稿時
-        /   %li.float.indextop4 回答数
-        / .clear
+        / 9
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        %h3
+          試験勉強
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+        .clear
+        %ul
+          - @questions.each_with_index do |question|
+            - array = Array.new
+            - array = question.categories
+            -if array.select(:category_id).includes(9)
+              %li.indexcontentbox
+                = link_to question_path(question) do
+                  .float.indexcontent.indexcontent1= question.title[0,14]
+                  .float.indexcontent.indexcontent2= question.content[0,6]
+                  .float.indexcontent.indexcontent3= question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[question.created_at.wday]})")
+                  .float.indexcontent.indexcontent4= question.answers.count
+                .clear
 
         / %ul
         /   - @questions.where(category9: true).each do |question|
@@ -227,19 +321,19 @@
         /       .clear
 
 
-        / / other
-        / .space10px
-        / .space10px
-        / .space10px
-        / .space10px
-        / %h3
-        /   そのほかの質問
-        / %ul
-        /   %li.float.indextop1 質問
-        /   %li.float.indextop2 詳細
-        /   %li.float.indextop3 投稿時
-        /   %li.float.indextop4 回答数
-        / .clear
+        / other
+        .space10px
+        .space10px
+        .space10px
+        .space10px
+        %h3
+          そのほかの質問
+        %ul
+          %li.float.indextop1 質問
+          %li.float.indextop2 詳細
+          %li.float.indextop3 投稿時
+          %li.float.indextop4 回答数
+        .clear
 
         / %ul
         /   - @questions.where(category1: nil).where(category2: nil).where(category3: nil).where(category4: nil).where(category5: nil).where(category6: nil).where(category7: nil).where(category8: nil).where(category9: nil).each do |question|

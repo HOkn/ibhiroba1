@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(params_user)
     if @user.save
-      raise
+
       login(:email, :password)
       redirect_to questions_path
     else

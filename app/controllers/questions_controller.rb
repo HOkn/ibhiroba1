@@ -54,7 +54,7 @@ class QuestionsController < ApplicationController
   def index_category
     @questions = Question.all
     @question_id = []
-    @question_id = QuestionCategory.question_id
+    # @question_id = QuestionCategory.question_id
   end
 
 

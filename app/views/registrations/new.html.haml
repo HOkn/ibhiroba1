@@ -13,135 +13,132 @@
 
           %h3 掲示板をご利用いただくには、新規登録をお願いいたします。
           %p 　　　　　*の箇所はすべて登録してください。
-          .formzu
-            %a{:href => "javascript:void(0)", :onClick => "javascript:window.open('http://ws.formzu.net/fgen/S21157404/', 'mailform1', 'toolbar=no, location=no, status=yes, menubar=yes, resizable=yes, scrollbars=yes, width=600, height=500, top=100, left=100')", :class => "a btn btn-default"}新規登録
-          / %table
-          /   %tbody
-          /     = form_for @user, url: registrations_path, method: :post do |f|
-          /       %tr
-          /         %td.alignright
-          /           メールアドレス*：
-          /         %td
-          /           = f.text_field :email, :placeholder => "example@example.com"
-          /       %tr
-          /         %td.alignright
-          /           表示名(小文字・半角のみ)*：
-          /         %td
-          /           = f.text_field :screen_name, :placeholder => "4~24文字 半角"
-          / %tr
-          /   %td.alignright 立場*：
-          /   %td.radio
-          /     =f.radio_button :status, "保護者"
-          /     .text
-          /       保護者
-          / %tr
-          /   %td.alignright
-          /   %td.radio
-          /     =f.radio_button :status, "IB生の保護者"
-          /     .text
-          /       IB生の保護者
-          / %tr
-          /   %td.alignright
-          /   %td.radio
-          /     =f.radio_button :status, "教育関係者"
-          /     .text
-          /       教員/教育関係者
-          / %tr
-          /   %td.alignright
-          /   %td.radio
-          /     =f.radio_button :status, "IB教員"
-          /     .text
-          /       IB教員
-          / %tr
-          /   %td.alignright
-          /   %td.radio
-          /     =f.radio_button :status, "IB生/卒業生"
-          /     .text
-          /       IB生/卒業生
-          / %tr
-          /   %td.alignright
-          /   %td.radio
-          /     =f.radio_button :status, "生徒"
-          /     .text
-          /       生徒
-          / %tr
-          /   %td.alignright
-          /     お子様の年齢：
-          /   %td
-          /     = f.text_field :child_age1, :class => "child_age"
-          / %tr
-          /   %td.alignright
-          /     在住国*：
-          /   %td
-          /     = f.text_field :residence_country, :placeholder => "(例)日本"
-          / %tr
-          /   %td.alignright
-          /     都道府県/地域*：
-          /   %td
-          /     = f.text_field :residencenow, :placeholder => "(例)東京都"
-          /   %tr
-          /     %td.alignright
-          /       学校名：
-          /     %td
-          /       = f.text_field :school, :placeholder => "学校名(非公開)"
-          /   %tr
-          /     %td.alignright
-          /       ほかに知っている地域：
-          /     %td
-          /       = f.text_field :origin, :placeholder => "(例)アメリカ"
-          / %tr
-          /   %td.alignright
-          /     知りたい分野*：
-          /   %td
-          /     = f.text_area :wannaknow, :placeholder => "高校進路、英語、家庭学習などなど"
-          / %tr
-          /   %td.alignright
-          /     答えられる分野：
-          /   %td
-          /     = f.text_area :know, :placeholder => "みなさまの力が必要です！"
-          / %tr
-          /   %td.alignright
-          /     自己紹介：
-          /   %td
-          /     = f.text_area :bio, size: "20"
-          / .space10px
-          / .space10px
-          / %tr
-          /   %td.alignright
-          /     質問記録の公開：
-          /   %td.checkbox
-          /     = f.check_box :privacy, {checked: "checked"}, true, false
-          /     　サイト内公開
-          / %tr
-          /   %td.alignright
-          /     メールマガジン：
-          /   %td.checkbox
-          /     = f.check_box :mailmagazine, {checked: "checked"}, true, false
-          /     　受け取る
-          / %tr
-          /   %td.alignright
-          /     .space10px
-          /     .space10px
-          /   %td
+          / .formzu
+          /   %a{:href => "javascript:void(0)", :onClick => "javascript:window.open('http://ws.formzu.net/fgen/S21157404/', 'mailform1', 'toolbar=no, location=no, status=yes, menubar=yes, resizable=yes, scrollbars=yes, width=600, height=500, top=100, left=100')", :class => "a btn btn-default"}新規登録
+          %table
+            %tbody
+              = form_for @user, url: registrations_path, method: :post do |f|
+                %tr
+                  %td.alignright
+                    メールアドレス*：
+                  %td
+                    = f.text_field :email, :placeholder => "example@example.com"
+                %tr
+                  %td.alignright
+                    表示名(小文字・半角のみ)*：
+                  %td
+                    = f.text_field :screen_name, :placeholder => "4~24文字 半角"
+                %tr
+                  %td.alignright 立場*：
+                  %td.radio
+                    =f.radio_button :status, "保護者"
+                    .text
+                      保護者
+                %tr
+                  %td.alignright
+                  %td.radio
+                    =f.radio_button :status, "IB生の保護者"
+                    .text
+                      IB生の保護者
+                %tr
+                  %td.alignright
+                  %td.radio
+                    =f.radio_button :status, "教育関係者"
+                    .text
+                      教員/教育関係者
+                %tr
+                  %td.alignright
+                  %td.radio
+                    =f.radio_button :status, "IB教員"
+                    .text
+                      IB教員
+                %tr
+                  %td.alignright
+                  %td.radio
+                    =f.radio_button :status, "IB生/卒業生"
+                    .text
+                      IB生/卒業生
+                %tr
+                  %td.alignright
+                  %td.radio
+                    =f.radio_button :status, "生徒"
+                    .text
+                      生徒
+                %tr
+                  %td.alignright
+                    お子様の年齢：
+                  %td
+                    = f.text_field :child_age1, :class => "child_age"
+                %tr
+                  %td.alignright
+                    在住国*：
+                  %td
+                    = f.text_field :residence_country, :placeholder => "(例)日本"
+                %tr
+                  %td.alignright
+                    都道府県/地域*：
+                  %td
+                    = f.text_field :residencenow, :placeholder => "(例)東京都"
+                  %tr
+                    %td.alignright
+                      学校名：
+                    %td
+                      = f.text_field :school, :placeholder => "学校名(非公開)"
+                  %tr
+                    %td.alignright
+                      ほかに知っている地域：
+                    %td
+                      = f.text_field :origin, :placeholder => "(例)アメリカ"
+                %tr
+                  %td.alignright
+                    知りたい分野*：
+                  %td
+                    = f.text_area :wannaknow, :placeholder => "高校進路、英語、家庭学習などなど"
+                %tr
+                  %td.alignright
+                    答えられる分野：
+                  %td
+                    = f.text_area :know, :placeholder => "みなさまの力が必要です！"
+                %tr
+                  %td.alignright
+                    自己紹介：
+                  %td
+                    = f.text_area :bio, size: "20"
+                .space10px
+                .space10px
+                %tr
+                  %td.alignright
+                    質問記録の公開：
+                  %td.checkbox
+                    = f.check_box :privacy, {checked: "checked"}, true, false
+                    　サイト内公開
+                %tr
+                  %td.alignright
+                    メールマガジン：
+                  %td.checkbox
+                    = f.check_box :mailmagazine, {checked: "checked"}, true, false
+                    　受け取る
+                %tr
+                  %td.alignright
+                    .space10px
+                    .space10px
+                  %td
 
-          / %tr
-          /   %td.alignright
-          /     パスワード*：
-          /   %td
-          /     = f.password_field :password
-          / %tr
-          /   %td.alignright
-          /     パスワード(確認)*：
-          /   %td
-          /     = f.password_field :password_confirmation
-          / %tr
-          /   %td.alignright
-          /   %td.float
-          /     = f.submit '登録', :class => "btn btn-default submitbutton float_right"
-          /       %li
-          /         【お願い】
-          /         %br 国際的に活躍できるお子さんになってほしいけれど、家庭ではどのようなサポートができるでしょうか・・？
-          /         %br 困っている方がいらっしゃいます。ご意見、どうかお聞かせください！
+                %tr
+                  %td.alignright
+                    パスワード*：
+                  %td
+                    = f.password_field :password
+                %tr
+                  %td.alignright
+                    パスワード(確認)*：
+                  %td
+                    = f.password_field :password_confirmation
+                %tr
+                  %td.alignright
+                  %td.float
+                    = f.submit '登録', :class => "btn btn-default submitbutton float_right"
+
 
   .col-md-3.sidebar
     = render 'questions/sidebar'
