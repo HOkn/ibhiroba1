@@ -16,8 +16,6 @@
 
           %h3 掲示板をご利用いただくには、新規登録をお願いいたします。
           %p 　　　　　*の箇所はすべて登録してください。
-          / .formzu
-          /   %a{:href => "javascript:void(0)", :onClick => "javascript:window.open('http://ws.formzu.net/fgen/S21157404/', 'mailform1', 'toolbar=no, location=no, status=yes, menubar=yes, resizable=yes, scrollbars=yes, width=600, height=500, top=100, left=100')", :class => "a btn btn-default"}新規登録
           =form_for @user, url: registrations_path, method: :post do |f|
             %table
               %tbody
