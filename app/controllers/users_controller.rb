@@ -31,12 +31,23 @@ class UsersController < ApplicationController
       @myquestions.push(@question)
     end
 
+
     @myanswers = []
-    @answer_id = @user.answers.each do |answer|
-      @question = answer.question
-      @answer = Answer.find(answer.id)
+    # @answeredquestion = []
+
+    @user.answers.each do |answer|
+      # @questionanswered = answer.question
+      @answer = answer
       @myanswers.push(@answer)
+      # @answeredquestion.push(@questionanswered)
     end
+
+    # @myanswers = []
+    # @answer_id = @user.answers.each do |answer|
+    #   @question = answer.question
+    #   @answer = Answer.find(answer.id)
+    #   @myanswers.push(@answer)
+    # end
 
 
   end

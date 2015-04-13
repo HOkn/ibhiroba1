@@ -67,11 +67,11 @@
         %ul
           - @myanswers.each do |answer|
             %li.indexcontentbox
-              = link_to(question_path(@question))  do
-                .float.indexcontent.indexcontent1= @question.title[0,14]
+              = link_to(question_path(answer.question))  do
+                .float.indexcontent.indexcontent1= answer.question.title[0,14]
                 .float.indexcontent.indexcontent2= answer.content[0,6]
-                .float.indexcontent.indexcontent3= @question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[@question.created_at.wday]})")
-                .float.indexcontent.indexcontent4= @question.answers.count
+                .float.indexcontent.indexcontent3= answer.question.created_at.strftime("%Y/%m/%d(#{%w(日 月 火 水 木 金 土)[answer.question.created_at.wday]})")
+                .float.indexcontent.indexcontent4= answer.question.answers.count
                 .clear
 
 
