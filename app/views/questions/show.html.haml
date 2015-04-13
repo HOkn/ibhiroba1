@@ -14,7 +14,7 @@
             = @questionuser.residence_country
             = "在住"
           #question_content
-            = @question.content
+            =simple_format(@question.content)
             = link_to image_tag('FacebookIcon.png', id:'FacebookIcon'), 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank, :class => "float_right FacebookIcon"
             -if logged_in?
               -if @question.favorited_by?(current_user, @question)
