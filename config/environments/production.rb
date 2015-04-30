@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.assets.precompile += ['*.js']
   GA.tracker = "UA-61673245-1"
 
   # Settings specified here will take precedence over those in config/application.rb.
