@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :schools
+
   resource :registrations, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
   resource :settings, only: [:edit, :update]
 
   resources :users, only: [:index, :show]
-  # get '/users/:id' => 'users#show'
-  # get '/users' => 'users#index'
-
 
   resources :categories
   get "/questions", to: "questions#index"

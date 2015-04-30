@@ -42,7 +42,6 @@ class QuestionsController < ApplicationController
     @user = current_user
     @question = Question.find(params[:id])
     @category = Category.find(params[:category][:id])
-
     if @question.update_attributes(question_params)& @question.categories << @category
       @question.save
       redirect_to question_path(@question)

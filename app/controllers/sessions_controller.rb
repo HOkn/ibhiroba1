@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
     reset_session
     # cookies.delete(:remember_token)
     redirect_to questions_path, notice: "ログアウトしました"
-
     unless current_user
       # raise
       # redirect_to questions_path, notice: "ログアウトしました"
