@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'events/show'
+
   resources :schools
 
   resource :registrations, only: [:new, :create]
