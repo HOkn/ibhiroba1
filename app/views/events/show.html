@@ -73,7 +73,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">5/23（土）東大生による国際バカロレアセミナー</h2>
+                    <h2 class="section-heading">5/23（土）</h2>
+                    <h2 class="section-heading">東大生による国際バカロレアセミナー</h2>
                     <div class="space10px"></div>
                     <div class="space10px"></div>
                     <h3 class="section-heading">国際バカロレア満点取得者と元桜蔭生が語る</h3>
@@ -327,7 +328,6 @@
                   お子様の幼稚園/学校
                 </div>
                 <div>
-
                   <%= f.text_field :school, :html =>{:class=>"input form-control", :placeholder=>"", :type => "text"} %>
                 </div>
                 </p>
@@ -337,7 +337,7 @@
                   お子様の幼稚園/学校についての評判・評価
                 </div>
                 <div>
-                  <%= f.text_field :comment, :html =>{:class=>"input form-control", :placeholder=>"", :type => "text", height: :"300px", width: :"35px"} %>
+                  <%= f.text_field :comment, :html =>{:class=>"input form-control comment", :placeholder=>"", :type => "text", :height=>"300px", :width=>"35px"} %>
                   <!-- <input type="text" name="comment" size="35" style="height:300px"> -->
                 </div>
                 </p>
@@ -350,11 +350,10 @@
                   <%= f.radio_button :session, "5/24土セッション２ 14-16:00", id: :"session2" %>
                   <LABEL for="session2">セッション２</LABEL>
                 </div>
-                <%= f.submit%>
+                <%= f.submit '参加する', class: :"btn-default btn btn-xl"%>
                 <% end %>
                 <div class="space10px"></div>
-                <h6> お申し込みのキャンセルは下記Contactよりお願いいたします。 </h6>
-
+                <h6> キャンセルは下記Contactよりお願いいたします。 </h6>
             </div>
         </div>
     </aside>
@@ -376,9 +375,10 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Contact</h2>
                     <hr class="primary">
-                    <p>700人規模コミュニティへはこちらから</p>
+
                 </div>
                 <div class="col-lg-4 col-lg-offset-2">
+                    <p>700人規模コミュニティへはこちらから</p>
                     <div>
                       <i class="fa fa-facebook-square fa-3x wow bounceIn"></i>
                     </div>
