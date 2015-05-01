@@ -288,15 +288,15 @@
                 <h2>お申し込み</h2>
                 <h4>学校選択でみなさまのお役に立てるよう、</h4>
                 <h4>ご存知の幼稚園・学校の評価をお書きください！</h4>
-                    <div class="space10px"></div>
-                <form action="post" method="post">
-
+                <div class="space10px"></div>
+                <!-- <form_for action="/events" class="new_event" id="new_event" method="post" > -->
+                <%= form_for :event, url: events_path, method: :post do |f|%>
                 <p>
                 <div>
                   ご予約名
                 </div>
                 <div>
-                  <input type="text" name="name" size="35">
+                  <%= f.text_field :name, :html =>{:class=>"input form-control", :placeholder=>"お名前", :type => "text", :size => "35"} %>
                 </div>
                 </p>
                 <p>
@@ -304,7 +304,7 @@
                   メールアドレス
                 </div>
                 <div>
-                  <input type="text" name="name" size="35">
+                  <%= f.text_field :email, :html =>{:class=>"input form-control", :placeholder=>"example@example.com", :type => "text"} %>
                 </div>
                 </p>
 
@@ -313,7 +313,8 @@
                   お子様の幼稚園/学校
                 </div>
                 <div>
-                  <input type="text" name="name" size="35">
+
+                  <%= f.text_field :school, :html =>{:class=>"input form-control", :placeholder=>"", :type => "text"} %>
                 </div>
                 </p>
 
@@ -322,19 +323,21 @@
                   お子様の幼稚園/学校についての評判・評価
                 </div>
                 <div>
-                  <input type="text" name="name" size="35" style="height:300px">
+                  <%= f.text_field :comment, :html =>{:class=>"input form-control", :placeholder=>"", :type => "text", height: :"300px", width: :"35px"} %>
+                  <!-- <input type="text" name="comment" size="35" style="height:300px"> -->
                 </div>
                 </p>
 
                 <p>セッション１：10:00~12:00</p>
                 <p>セッション２：14:00~16:00</p>
                 <div>
-                <INPUT type="radio" name="rdo" id="session1"><LABEL for="session1">セッション１</LABEL>
-                <INPUT type="radio" name="rdo" id="session2"><LABEL for="session2">セッション２</LABEL>
+                  <%= f.radio_button :session, "5/24土セッション１ 10-12:00", id: :"session1" %>
+                  <LABEL for="session1">セッション１</LABEL>
+                  <%= f.radio_button :session, "5/24土セッション２ 14-16:00", id: :"session1" %>
+                  <LABEL for="sessio2">セッション２</LABEL>
                 </div>
-
-                <a href="#" class="btn btn-default btn-xl wow tada">お申し込みを登録</a>
-                </form>
+                <%= f.submit %>
+                <% end %>
                 <div class="space10px"></div>
                 <h6> お申し込みのキャンセルは下記Contactよりお願いいたします。 </h6>
 

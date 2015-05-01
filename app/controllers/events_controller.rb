@@ -1,17 +1,18 @@
 class EventsController < ApplicationController
   def show
+    @event = Event.new
   end
 
 
   def create
-    @customer = @school.comments.build(comment_params)
-    if @customer.save
+    @event = Event.new(event_params)
+    if @event.save
       redirect_to root_path
     end
   end
 
   def index
-    @customers = Events.all
+    @events = Events.all
   end
 
   def edit
@@ -22,7 +23,7 @@ class EventsController < ApplicationController
   def update
     # @school = School.find(params[:school_id])
     # @comment = @school.comments.find(params[:id])
-    # if @comment.update_attributes(comment_params)
+    # if @comment.update_attributes(event_params)
     #   redirect_to school_path(@school)
     # else
     #   render 'edit'

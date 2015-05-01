@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'events/show'
+  resources :events
 
   resources :schools
 
