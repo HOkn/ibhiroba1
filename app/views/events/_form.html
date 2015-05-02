@@ -1,0 +1,61 @@
+
+                <%= form_for :event, url: events_path, method: :post do |f|%>
+                <% if @event.errors.any?%>
+                <div id: :"error_explanation">
+                    <h2>
+                      <%= pluralize(@question.errors.count, "error") %>
+                      <br> このままでは投稿ができません。
+                    </h2>
+                    <ul>
+                      <%- @question.errors.full_messages.each do |msg|%>
+                        <li> msg </li>
+                      </ul>
+                        <% end %>
+                      </div>
+                        <% end %>
+
+                <p>
+                <div>
+                  ご予約名
+                </div>
+                <div>
+                  <%= f.text_field :name, :html =>{:class=>"input form-control", :placeholder=>"お名前", :type => "text", :size => "35" } %>
+                </div>
+                </p>
+                <p>
+                <div>
+                  メールアドレス
+                </div>
+                <div>
+                  <%= f.text_field :email, :html =>{:class=>"input form-control", :placeholder=>"example@example.com", :type => "text"} %>
+                </div>
+                </p>
+
+                <p>
+                <div>
+                  お子様の幼稚園/学校
+                </div>
+                <div>
+                  <%= f.text_field :school, :html =>{:class=>"input form-control", :placeholder=>"", :type => "text"} %>
+                </div>
+                </p>
+
+                <p>
+                <div>
+                  お子様の幼稚園/学校についての評判・評価
+                </div>
+                <div>
+                  <%= f.text_field :comment, :html =>{:class=>"input form-control comment", :placeholder=>"", :type => "text"} %>
+                </div>
+                </p>
+
+                <p>セッション１：10:00~12:00</p>
+                <p>セッション２：14:00~16:00</p>
+                <div>
+                  <%= f.radio_button :session, "5/24土セッション１ 10-12:00", id: :"session1" %>
+                  <LABEL for="session1">セッション１</LABEL>
+                  <%= f.radio_button :session, "5/24土セッション２ 14-16:00", id: :"session2" %>
+                  <LABEL for="session2">セッション２</LABEL>
+                </div>
+                <%= f.submit '参加する', class: :"btn-default btn btn-xl"%>
+                <% end %>
