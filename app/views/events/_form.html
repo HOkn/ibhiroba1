@@ -48,17 +48,22 @@
                   学習意欲、先生、いじめの少なさ、課外活動、英語力、設備などについて、ぜひお聞かせください！
                 </div>
                 <div>
-                  <%= f.text_field :comment, :html =>{:class=>"input form-control comment", :placeholder=>"", :type => "text"} %>
+                  <%= f.text_area :comment, :html =>{:class=>"input form-control comment", :placeholder=>"", :type => "text"} %>
                 </div>
                 </p>
 
                 <p>セッション１：10:00~12:00</p>
                 <p>セッション２：14:00~16:00</p>
+                <h5>参加費は、お一人1500円(会場払い)となります。</h5>
+                <div class="space10px"></div>
+                <div class="space10px"></div>
+
                 <div>
                   <%= f.radio_button :session, "5/24土セッション１ 10-12:00", id: :"session1" %>
                   <LABEL for="session1">セッション１</LABEL>
                   <%= f.radio_button :session, "5/24土セッション２ 14-16:00", id: :"session2" %>
                   <LABEL for="session2">セッション２</LABEL>
                 </div>
+                <div class="space10px"></div>
                 <%= f.submit '参加する', class: :"btn-default btn btn-xl"%>
                 <% end %>
