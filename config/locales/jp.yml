@@ -32,3 +32,27 @@ ja:
               residencenow:
                 blank: 都道府県/地域を入力してください
                 too_short: 都道府県/地域が短すぎます
+
+
+
+         event:
+           attributes:
+              name:
+                blank: お名前を入力してください
+
+              email:
+                 blank: メールアドレスを入力してください
+                 taken: メールアドレスが既に使用済みです
+
+              school:
+                blank: 幼稚園・学校名を入力してください
+                too_short: 正式名称をお願いいたします
+                too_long: 正式名称をお願いいたします
+              comment:
+                blank: 評価・評判を入力してください
+                too_short: ５０文字以上で入力してください
+                too_long: ２０００文字以下で入力してください
+
+
+              session:
+                blank: 参加されるセミナーセッションを選択してください

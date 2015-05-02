@@ -7,7 +7,12 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
+      flash[:notice] = "ご参加登録、ありがとうございました！のちほど岡庭・沖・多田より確認のメールを送らせていただきます。"
       redirect_to root_path
+      flash[:notice] = "ご参加登録、ありがとうございました！のちほど岡庭・沖・多田より確認のメールを送らせていただきます。"
+    else
+      flash[:alert] = "!!ALERT!! エラーのため登録ができませんでした。フォームをもう一度ご確認ください。"
+      render 'show'
     end
   end
 
