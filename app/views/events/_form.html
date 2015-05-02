@@ -16,7 +16,7 @@
 
                 <p>
                 <div>
-                  ご予約名
+                  ご予約名(必須)
                 </div>
                 <div>
                   <%= f.text_field :name, :html =>{:class=>"input form-control", :placeholder=>"お名前", :type => "text", :size => "35" } %>
@@ -24,7 +24,7 @@
                 </p>
                 <p>
                 <div>
-                  メールアドレス
+                  メールアドレス(必須)
                 </div>
                 <div>
                   <%= f.text_field :email, :html =>{:class=>"input form-control", :placeholder=>"example@example.com", :type => "text"} %>
@@ -33,7 +33,7 @@
 
                 <p>
                 <div>
-                  お子様の幼稚園/学校
+                  お子様の幼稚園/学校(必須)
                 </div>
                 <div>
                   <%= f.text_field :school, :html =>{:class=>"input form-control", :placeholder=>"", :type => "text"} %>
@@ -42,7 +42,10 @@
 
                 <p>
                 <div>
-                  お子様の幼稚園/学校についての評判・評価
+                  お子様の幼稚園/学校についての評判・評価(５０文字以上、必須)
+                </div>
+                <div>
+                  学習意欲、先生、いじめの少なさ、課外活動、英語力、設備などについて、ぜひお聞かせください！
                 </div>
                 <div>
                   <%= f.text_field :comment, :html =>{:class=>"input form-control comment", :placeholder=>"", :type => "text"} %>

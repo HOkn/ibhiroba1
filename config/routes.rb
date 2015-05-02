@@ -22,7 +22,6 @@ Rails.application.routes.draw do
 
   get 'slides/show'
 
-
   root to: 'events#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
