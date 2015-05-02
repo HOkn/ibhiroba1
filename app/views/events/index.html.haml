@@ -3,31 +3,36 @@
 %table
   %tr
     %th
-      予約社名
+      予約者名||
     %th
-      メールアドレス
+      メールアドレス||
     %th
-      学校名
+      学校名||
     %th
-      口コミ
+      口コミ　　　　　　　　　　　　||
     %th
-      セッション名
+      セッション名||
     %th
-      予約日時
+      予約日時||
   - @events.each do |c|
     %tr
       %td
         =c.name
+        ="||"
       %td
         =c.email
+        ="||"
       %td
         =c.school
+        ="||"
       %td
-        =c.comment
+        =simple_format(c.comment[0..20])
+
       %td
         =c.session
+        ="||"
       %td
         =c.created_at
 
-    ="--------------------"
+
 
