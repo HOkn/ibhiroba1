@@ -1,10 +1,33 @@
 
-- @customers.each do |c|
-  =c.name
-  =c.email
-  =c.school
-  =c.comment
-  =c.session
-  =c.created_at
-  ="--------------------"
+
+%table
+  %tr
+    %th
+      予約社名
+    %th
+      メールアドレス
+    %th
+      学校名
+    %th
+      口コミ
+    %th
+      セッション名
+    %th
+      予約日時
+  - @events.each do |c|
+    %tr
+      %td
+        =c.name
+      %td
+        =c.email
+      %td
+        =c.school
+      %td
+        =c.comment
+      %td
+        =c.session
+      %td
+        =c.created_at
+
+    ="--------------------"
 
