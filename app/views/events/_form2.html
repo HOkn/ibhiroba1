@@ -1,0 +1,72 @@
+
+                <%= form_for :event, url: events_path, method: :post do |f|%>
+                <% if @event.errors.any?%>
+                <div id: :"error_explanation">
+                    <h2>
+                      <%= pluralize(@event.errors.count, "error") %>
+                      <br> このままでは登録ができません。
+                    </h2>
+                    <ul>
+                      <%- @event.errors.full_messages.each do |msg|%>
+                        <li> <%= msg %> </li>
+                      </ul>
+                        <% end %>
+                      </div>
+                        <% end %>
+                <p>
+                <div>
+                  ご予約名(必須)
+                </div>
+                <div>
+                  <%= f.text_field :name, :html =>{:class=>"input form-control", :placeholder=>"お名前", :type => "text", :size => "35" } %>
+                </div>
+                </p>
+                <p>
+                <div>
+                  メールアドレス(必須)
+                </div>
+                <div>
+                  こちらへ日時・振り込み情報等を送らせていただきます。
+                </div>
+                <div>
+                  <%= f.text_field :email, :html =>{:class=>"input form-control", :placeholder=>"example@example.com", :type => "text"} %>
+                </div>
+                </p>
+
+                <p>
+                <div>
+                  お子様の幼稚園/学校(必須)
+                </div>
+                <div>
+                  <%= f.text_field :school, :html =>{:class=>"input form-control", :placeholder=>"", :type => "text"} %>
+                </div>
+                </p>
+
+                <p>
+                <div>
+                  お子様の幼稚園/学校についての評判・評価(５０文字以上でお願いしております。公開する場合があればすべて匿名となります。)
+                </div>
+                <div>
+                  学習意欲、先生、いじめの少なさ、課外活動、英語力、設備などについて、ぜひお聞かせください！
+                </div>
+                <div>
+                  <%= f.text_area :comment, :html =>{:class=>"input form-control comment", :placeholder=>"", :type => "text"} %>
+                </div>
+                </p>
+
+                <h5>ご料金は、セッション前に2000円/３０分(岡庭の口座またはPayPal振込)となります。</h5>
+                <div class="space10px"></div>
+                <h5>学業の時間確保、そして勉強会等参加費の確保のためにこの料金設定とさせていただきました。どうかご理解ください。</h5>
+                <div class="space10px"></div>
+                <div class="space10px"></div>
+                <div>
+                  <%= f.radio_button :session, "岡庭SKYPE 30min", id: :"session1" %>
+                  <LABEL for="session1">３０分セッション</LABEL>
+                  <%= f.radio_button :session, "岡庭SKYPE 1hr", id: :"session2" %>
+                  <LABEL for="session2">６０分セッション</LABEL>
+                  <%= f.radio_button :session, "岡庭SKYPE 90min", id: :"session2" %>
+                  <LABEL for="session2">９０分セッション</LABEL>
+                </div>
+                <div class="space10px"></div>
+                <%= f.submit '参加する', class: :"btn-default btn btn-xl"%>
+                <% end %>

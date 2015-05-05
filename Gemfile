@@ -10,6 +10,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'sorcery'
+gem 'rails_autolink'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

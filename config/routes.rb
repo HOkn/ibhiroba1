@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :events
   get 'events/registered'
-
+  get 'events/skype'
   resources :schools
 
   resource :registrations, only: [:new, :create]
