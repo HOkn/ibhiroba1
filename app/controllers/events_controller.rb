@@ -38,6 +38,11 @@ class EventsController < ApplicationController
   def destroy
   end
 
+  def skype
+    render :text => "Skype"
+    @event = Event.new
+  end
+
 
   private
     def event_params
