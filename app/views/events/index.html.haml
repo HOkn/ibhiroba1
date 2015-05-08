@@ -23,10 +23,12 @@
         =c.email
         ="||"
       %td
-        =c.school
+        -unless c.school==nil
+          =c.school
         ="||"
       %td
-        =simple_format(c.comment[0..20])
+        -unless c.comment==nil
+          =simple_format(c.comment[0..20])
 
       %td
         =c.session
